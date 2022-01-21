@@ -1,0 +1,78 @@
+ #root {
+     /* background-color: cornflowerblue; */
+     position: relative;
+     width: 100vw;
+     height: 100vh;
+ }
+
+ .app {
+     /* background-color: turquoise; */
+     display: flex;
+     flex-direction: column;
+     /* justify-content: center; */
+     /* align-items: center; */
+     padding-top: 30px;
+     width: 100vw;
+     height: 100vh;
+ }
+
+ .top-navbar-wrapper {
+     /* background-color: rgb(114, 114, 170); */
+     border-bottom: 1px solid rgb(190, 190, 190);
+     width: 100%;
+     height: 15vh;
+     top: 0;
+     transform: translate(0, -50%);
+     position: sticky;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .top-navbar {
+     /* background-color: wheat; */
+     min-width: auto;
+     width: 90%;
+     height: 100%;
+     display: flex;
+     position: sticky;
+     top: 0;
+     left: 0;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .top-navbar-logo-div {
+     /* background-color: violet; */
+     width: 260px;
+     height: 100%;
+     display: flex;
+     align-items: center;
+ }
+
+.top-navbar-logo {
+    /* margin: auto; */
+    display: block;
+    min-width: 60%;
+    max-width: 60%;
+    height: 60%;
+}
+
+.navbar-right {
+    /* background-color: yellow; */
+    height: 100%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-signup, .nav-login { 
+    /* background-color: yellow; */
+    display: flex;
+    width: 70%;
+    height: 100%;
+    border-left: 1px solid rgb(190, 190, 190);
+    align-items: center;
+    justify-content: center;
+}
