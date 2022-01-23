@@ -1,22 +1,23 @@
 import React from "react"
-import GreetingsContainer from "./navbar/navbar_container"
+import NavBarContainer from "./navbar/navbar_container"
 import HomeContainer from "./home/home_container"
 import { Route, Switch, BrowserRouter } from "react-router-dom"
-import SignupFormContainer from "./session_form/signup_form_container"
-import LoginFormContainer from "./session_form/login_form_container"
 import AuthRoute from "../utils/route_util"
+import Modal from "./modal/modal"
+import Footer from "./home/footer"
 
 
 const App = () => (
     <div className="app">
+        <Modal />
         <header className="top-navbar-wrapper">
-            <GreetingsContainer />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
-            <AuthRoute path="/login" component={LoginFormContainer} />
+            <NavBarContainer />
         </header>
-            {/* <Route exact path="/" component={HomeContainer}/> */}
-           
+        <Route exact path="/" component={HomeContainer}/>
+         {/* <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute path="/login" component={LoginFormContainer} /> */}
+        <Footer />
     </div>
-)
+);
 
-export default App
+export default App;

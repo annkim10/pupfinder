@@ -1,4 +1,4 @@
-import UsersReducer from "./users_reducer";
+import UsersReducer from "../secondary/users_reducer";
 import { combineReducers } from "redux";
 
 

@@ -1,4 +1,5 @@
 import React from "react"
+import Modal from "react-modal"
 
 class LoginForm extends React.Component {
 
@@ -13,7 +14,7 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state)
+        this.props.processForm(this.state).then(this.props.closeModal)
     }
 
     handleChange(field) {
@@ -22,17 +23,36 @@ class LoginForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+           <ul className="error-list">
+                {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+           </ul>
+        )
+    }
+
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h3>{this.props.formType}</h3>
-                <br></br>
-                <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleChange('email')}/>
-                <br></br>
-                <input placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange('password')}/>
-                <br></br>
-                <button>Log in</button>
-            </form>
+            <div className="modal-wrapper">
+                <div className="form-wrapper" >
+                    <div className="close-x">
+                        <button onClick={this.props.closeModal}>X</button>
+                    </div>
+                    <h1 className="form-header">{this.props.formType}</h1>
+                    <form className="login-form" onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
+                        <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleChange('email')}/>
+                        <br/>
+                        <input placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange('password')}/>
+                        <br/><br/>
+                        <button className="form-button">Log in</button>
+                    </form>
+                    <div className="other-form-link">
+                        <p>Need an account?</p>
+                        {/* {this.props.otherForm()} */}
+                    </div>
+                </div>
+            </div>
         )
     }
 }

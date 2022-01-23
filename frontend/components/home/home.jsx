@@ -1,19 +1,21 @@
 import React from "react";
-import HomeCarousel from "./carousel";
-import img from "../../assets/carousel1.png"
-import logo from "../../assets/pupfinder_logo.png"
+import img from "../../assets/img1.jpg"
+
 
 class Home extends React.Component {
 
     render() {
         return (
         <div className="home-wrapper">
-            {/* <h2>Find your perfect pup</h2> */}
-            <div className="carousel-wrapper">
-                <img className="carousel" src={img} />
-                 {/* <HomeCarousel /> */}
+            <div className="main-div">
+                <div className="inner-home-div">
+                    {/* <h2>Find your perfect pup</h2> */}
+                    <img className="hero-img" src={img} />
+                </div>
+                <div className="articles-home-div">
+                    <p>Learn more</p>
+                </div>    
             </div>
-           
         </div>
         )}
 

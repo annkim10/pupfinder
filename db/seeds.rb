@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#add a demo login seed create object and when click on the button, dispatch login user with the demo login object
 
 #USER CLASS 
 
