@@ -27,7 +27,11 @@ class SignupForm extends React.Component {
     }
 
     renderErrors() {
-        
+        return (
+           <ul className="error-list">
+                {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+           </ul>
+        )
     }
 
     render() {
@@ -39,6 +43,7 @@ class SignupForm extends React.Component {
                     </div>
                     <h1 className="form-header">{this.props.formType}</h1>
                     <form className="signup-form" onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
                         <input type="text" placeholder="First name" value={this.state.first_name} onChange={this.handleChange('first_name')}/>
                         <input type="text" placeholder="Last name" value={this.state.last_name} onChange={this.handleChange('last_name')}/>
                         <input type="number" placeholder="Zipcode" value={this.state.zipcode} onChange={this.handleChange('zipcode')}/>

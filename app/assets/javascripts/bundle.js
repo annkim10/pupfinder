@@ -92,8 +92,8 @@ var signup = function signup(user) {
   return function (dispatch) {
     return _utils_session_api_util__WEBPACK_IMPORTED_MODULE_0__.postUser(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 }; // , err => dispatch(receiveErrors(err.responseJSON))
@@ -773,7 +773,15 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "renderErrors",
-    value: function renderErrors() {}
+    value: function renderErrors() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+        className: "error-list"
+      }, this.props.errors.map(function (err, i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          key: i
+        }, err);
+      }));
+    }
   }, {
     key: "render",
     value: function render() {
@@ -790,7 +798,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         className: "signup-form",
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "text",
         placeholder: "First name",
         value: this.state.first_name,
