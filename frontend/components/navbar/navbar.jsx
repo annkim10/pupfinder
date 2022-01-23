@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import logo from "../../assets/pupfinder_logo.png"
+import { FaHeart } from "react-icons/fa"
 
 
 
@@ -22,7 +23,14 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className="navbar-right">
-                    <p className="currentuser-name"> {currentUser.firstName} {currentUser.lastName} </p>
+                    <div className="currentuser-name">
+                        <p > 
+                            {currentUser.firstName} {currentUser.lastName}  
+                        </p>
+                    </div>
+                    <div className="fav-icon">
+                        <button className="fav-button"> <FaHeart size={20}/> </button>
+                    </div>
                     <button className="nav-logout" onClick={() => logout()}>Logout</button>
                 </div>
             )

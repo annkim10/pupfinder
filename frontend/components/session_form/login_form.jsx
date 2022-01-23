@@ -48,8 +48,7 @@ class LoginForm extends React.Component {
                         <button className="form-button">Log in</button>
                     </form>
                     <div className="other-form-link">
-                        <p>Need an account?</p>
-                        {/* {this.props.otherForm()} */}
+                        <p>Need an account? <span>{this.props.otherForm}</span></p>
                     </div>
                 </div>
             </div>

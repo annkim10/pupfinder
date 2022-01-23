@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal, openModal } from "../../actions/modal_actions";
 import SignupForm from "./signup_form";
 import { signup } from "../../actions/session_actions";
 
@@ -12,7 +12,7 @@ const mapState = (state, ownProps) => ({
 const mapDispatch = (dispatch, ownProps) => ({
     processForm: user => dispatch(signup(user)),
     otherForm: (
-        <button onClick={() => dispatch(openModal('login'))}>
+        <button className="other-form" onClick={() => dispatch(openModal('login'))}>
             Log in
         </button>
     ),

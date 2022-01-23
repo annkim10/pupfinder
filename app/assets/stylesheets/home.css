@@ -65,6 +65,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
+}
+
+.currentuser-name {
+    /* background-color: aquamarine; */
+    /* padding: 10px; */
+    min-width: 50%;
+    max-width: auto;
+    height: 100%;
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fav-icon {
+    /* background-color: cadetblue; */
+    min-width: 30%;
+    max-width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgb(190, 190, 190);
+}
+
+.fav-button:hover {
+   color: #260273;
 }
 
 .nav-signup, .nav-login, .nav-logout { 
@@ -77,17 +105,14 @@
     justify-content: center;
 }
 
+.nav-logout {
+    min-width: 50%;
+}
+
 .nav-signup:hover, .nav-login:hover, .nav-logout:hover { 
     color: #260273;
     font-weight: 700;
     cursor: pointer;
-}
-
-.currentuser-name {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .home-wrapper {

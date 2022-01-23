@@ -52,7 +52,7 @@ class SignupForm extends React.Component {
                         <button className="form-button">Sign up</button>
                     </form>
                     <div className="other-form-link">
-                        <p>Already have an account?</p>
+                        <p>Already have an account? <span>{this.props.otherForm}</span></p>
                     </div>
                 </div>
             </div>
