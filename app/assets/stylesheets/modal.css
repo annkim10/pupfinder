@@ -55,6 +55,7 @@
   padding-left: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
+
 }
 
 .login-form, .signup-form {
@@ -62,6 +63,7 @@
   /* width: 400px; */
   display: block;
   padding: 10px 50px;
+  color: rgb(65, 65, 65);
 }
 
 .close-x {
@@ -132,6 +134,7 @@ input {
   height: 50px;
   padding-left: 50px;
   padding-bottom: 20px;
+  color: rgb(65, 65, 65);
 }
 
 .other-form {
@@ -139,6 +142,7 @@ input {
   color:#260273;
   font-weight: 600;
   cursor: pointer;
+  color: rgb(65, 65, 65);
 }
 
 .error-list {

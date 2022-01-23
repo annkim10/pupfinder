@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import logo from "../../assets/pupfinder_logo.png"
 import { FaHeart } from "react-icons/fa"
+import UserShowContainer from "../user/user_show_container"
 
 
 
@@ -24,12 +25,13 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-right">
                     <div className="currentuser-name">
-                        <p > 
+                        <p> 
                             {currentUser.firstName} {currentUser.lastName}  
                         </p>
                     </div>
-                    <div className="fav-icon">
-                        <button className="fav-button"> <FaHeart size={20}/> </button>
+                    <div className="fav-icon-div">
+                        <Link to={`/users/1`} className="fav-icon"><FaHeart size={20}/> </Link>
+                        {/* <button className="fav-button"> <FaHeart size={20}/> </button> */}
                     </div>
                     <button className="nav-logout" onClick={() => logout()}>Logout</button>
                 </div>
@@ -42,7 +44,9 @@ class NavBar extends React.Component {
         return (
             <div className="top-navbar">
                     <div className="top-navbar-logo-div" >
-                        <img className="top-navbar-logo" src={logo} />
+                        <Link to="/">
+                            <img className="top-navbar-logo" src={logo} />
+                        </Link>
                     </div>
                    {this.checkLogin()}
             </div>
