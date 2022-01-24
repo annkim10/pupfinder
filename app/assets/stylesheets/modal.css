@@ -51,7 +51,7 @@
   /* background-color: turquoise; */
   font-family: 'Poppins', sans-serif;
   color: #3f04bf;
-  font-size: 30px;
+  font-size: 35px;
   padding-left: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -148,4 +148,15 @@ input {
 .error-list {
   color: rgb(201, 25, 25);
   font-size: 14px;
+}
+
+.demo-login-div {
+  /* background-color: blue; */
+  border-top: 0.5px solid rgb(180, 180, 180);
+  padding-top: 10px;
+  width: 95%;
+}
+
+.demo-login-div > button {
+  width: 100%;
 }

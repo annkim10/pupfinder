@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
             password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.loginDemo = this.loginDemo.bind(this)
     }
 
     handleSubmit(e) {
@@ -23,6 +24,15 @@ class LoginForm extends React.Component {
         }
     }
 
+    loginDemo() {
+        const demoUser = {
+            email: "demouser@demo.com",
+            password: "password"
+        }
+        this.setState( {email: demoUser.email, password: demoUser.password} )
+        this.props.processForm(this.state).then(this.props.closeModal)
+    }
+
     renderErrors() {
         return (
            <ul className="error-list">
@@ -30,7 +40,7 @@ class LoginForm extends React.Component {
            </ul>
         )
     }
-
+    
     render() {
         return (
             <div className="modal-wrapper">
@@ -40,12 +50,16 @@ class LoginForm extends React.Component {
                     </div>
                     <h1 className="form-header">{this.props.formType}</h1>
                     <form className="login-form" onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
                         <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleChange('email')}/>
                         <br/>
                         <input placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange('password')}/>
                         <br/><br/>
                         <button className="form-button">Log in</button>
+                        <br/><br/>
+                        <div className="demo-login-div">
+                            <button className="form-button" onClick={this.loginDemo}>Demo Login</button>
+                        </div>
+                        {this.renderErrors()}
                     </form>
                     <div className="other-form-link">
                         <p>Need an account? <span>{this.props.otherForm}</span></p>
