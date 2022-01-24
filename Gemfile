@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "aws-sdk-s3"
 gem 'jquery-rails'
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -53,7 +54,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'faker'
 end
 
 group :test do
