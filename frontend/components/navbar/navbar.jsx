@@ -14,7 +14,7 @@ class NavBar extends React.Component {
 
     checkLogin() {
         const {currentUser, logout, openModal} = this.props
-        if (typeof currentUser === 'undefined') {
+        if (!currentUser) {
             return (
                 <div className="navbar-right">
                         <button className="nav-signup" onClick={() => openModal('signup')}>Sign up</button>

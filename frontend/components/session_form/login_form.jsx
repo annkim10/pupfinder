@@ -1,5 +1,4 @@
 import React from "react"
-import Modal from "react-modal"
 
 class LoginForm extends React.Component {
 
@@ -11,6 +10,7 @@ class LoginForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.loginDemo = this.loginDemo.bind(this)
+        this.demo = false
     }
 
     handleSubmit(e) {
@@ -31,6 +31,7 @@ class LoginForm extends React.Component {
         }
         this.setState( {email: demoUser.email, password: demoUser.password} )
         this.props.processForm(this.state).then(this.props.closeModal)
+        this.demo = true
     }
 
     renderErrors() {
@@ -42,6 +43,14 @@ class LoginForm extends React.Component {
     }
     
     render() {
+
+        let errors;
+        if (!this.demo) {
+            errors = this.renderErrors()
+        } else {
+            errors = ""
+        }
+
         return (
             <div className="modal-wrapper">
                 <div className="form-wrapper" >
@@ -50,6 +59,7 @@ class LoginForm extends React.Component {
                     </div>
                     <h1 className="form-header">{this.props.formType}</h1>
                     <form className="login-form" onSubmit={this.handleSubmit}>
+                        {errors}
                         <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleChange('email')}/>
                         <br/>
                         <input placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange('password')}/>
@@ -59,7 +69,6 @@ class LoginForm extends React.Component {
                         <div className="demo-login-div">
                             <button className="form-button" onClick={this.loginDemo}>Demo Login</button>
                         </div>
-                        {this.renderErrors()}
                     </form>
                     <div className="other-form-link">
                         <p>Need an account? <span>{this.props.otherForm}</span></p>

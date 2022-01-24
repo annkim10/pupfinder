@@ -2,7 +2,12 @@
   "name": "pupfinder",
   "private": true,
   "scripts": {
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "14.7.0",
+    "npm": "8.3.1"
   },
   "dependencies": {
     "@babel/core": "^7.16.7",
