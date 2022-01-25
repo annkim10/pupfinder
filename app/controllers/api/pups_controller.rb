@@ -6,7 +6,7 @@ class Api::PupsController < ApplicationController
     end
 
     def show 
-        @pup = Pup.find(params[:id])
+        @pup = Pup.with_attached_photos.find(params[:id])
         render :show
     end
 

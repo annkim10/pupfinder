@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import {fetchPup} from "../../actions/pup_actions"
 
 const mapState = (state, ownProps) => ({
-    pup: state.pups[ownProps.match.params.pupId]
+    pup: state.entities.pups[ownProps.match.params.pupId],
+    pupId: parseInt(ownProps.match.params.pupId)
 })
 
 const mapDispatch = dispath => ({

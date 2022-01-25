@@ -202,7 +202,7 @@ var App = function App() {
     path: "/users/:userId",
     component: _user_user_show_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
-    path: "/pups",
+    path: "/pups/index",
     component: _pup_pup_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
     path: "/pups/:pupId",
@@ -311,7 +311,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "articles-home-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        to: "/pups"
+        to: "/pups/index"
       }, "Pups Index"))));
     }
   }]);
@@ -609,6 +609,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _pup_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pup_index_item */ "./frontend/components/pup/pup_index_item.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -634,6 +635,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var PupIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(PupIndex, _React$Component);
 
@@ -653,12 +655,13 @@ var PupIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var pups = this.props.pups;
-      console.log("inside index", pups);
+      var pups = this.props.pups; // console.log("inside index", pups)
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "card-div"
       }, pups.map(function (pup) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pup_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: pup.id,
           pup: pup
         });
       }));
@@ -668,7 +671,7 @@ var PupIndex = /*#__PURE__*/function (_React$Component) {
   return PupIndex;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PupIndex);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.withRouter)(PupIndex));
 
 /***/ }),
 
@@ -769,6 +772,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -794,28 +799,98 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var PupShow = /*#__PURE__*/function (_React$Component) {
   _inherits(PupShow, _React$Component);
 
   var _super = _createSuper(PupShow);
 
   function PupShow(props) {
+    var _this;
+
     _classCallCheck(this, PupShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props); // console.log("construct", this.props)
+
+    _this.state = {
+      current: 0,
+      length: _this.props.pup.photoUrls.length
+    }; // this.length = this.props.pup.photoUrls.length
+
+    _this.nextSlide = _this.nextSlide.bind(_assertThisInitialized(_this));
+    _this.prevSlide = _this.prevSlide.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PupShow, [{
+    key: "nextSlide",
+    value: function nextSlide() {
+      var _this2 = this;
+
+      this.setState(function (prevState) {
+        return _this2.state.current === _this2.state.length - 1 ? {
+          current: 0
+        } : {
+          current: prevState.current + 1
+        };
+      });
+    }
+  }, {
+    key: "prevSlide",
+    value: function prevSlide() {
+      var _this3 = this;
+
+      this.setState(function (prevState) {
+        return _this3.state.current === 0 ? {
+          length: prevState.length - 1
+        } : {
+          current: prevState.current - 1
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "pup show");
+      var _this4 = this;
+
+      // console.log("inside pupshow", this.props)
+      var pup = this.props.pup; // console.log("inside pupshow", this.props.pup.pupName)
+      // console.log("state", this.state)
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-top-links-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-top-links"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Pup Search"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Next Pup"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-main-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Meet ", pup.pupName, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-img-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaAngleLeft, {
+        className: "left-arrow",
+        onClick: this.prevSlide
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaAngleRight, {
+        className: "right-arrow",
+        onClick: this.nextSlide
+      }), pup.photoUrls.map(function (url, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: idx === _this4.state.current ? 'slide-active' : 'slide',
+          key: idx
+        }, idx === _this4.state.current && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          className: "pup-show-img",
+          src: url
+        }));
+      }))));
     }
   }]);
 
   return PupShow;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PupShow);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.withRouter)(PupShow));
 
 /***/ }),
 
@@ -839,7 +914,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapState = function mapState(state, ownProps) {
   return {
-    pup: state.pups[ownProps.match.params.pupId]
+    pup: state.entities.pups[ownProps.match.params.pupId],
+    pupId: parseInt(ownProps.match.params.pupId)
   };
 };
 

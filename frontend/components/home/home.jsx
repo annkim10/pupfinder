@@ -22,7 +22,7 @@ class Home extends React.Component {
                     <img className="hero-img" src={img} />
                 </div>
                 <div className="articles-home-div">
-                    <Link to="/pups">Pups Index</Link>
+                    <Link to="/pups/index">Pups Index</Link>
                 </div>    
             </div>
         </div>
