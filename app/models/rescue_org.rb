@@ -16,8 +16,9 @@ class RescueOrg < ApplicationRecord
 
     validates :org_name, :org_address, :org_email, :org_phone, :org_website, :org_bio, presence: true
 
-    has_many :pups
-
-    
+    has_many :pups,
+    primary_key: :id,
+    foreign_key: :org_id,
+    class_name: :Pup
 
 end

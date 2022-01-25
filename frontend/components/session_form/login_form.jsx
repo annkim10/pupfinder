@@ -24,6 +24,10 @@ class LoginForm extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
     loginDemo() {
         const demoUser = {
             email: "demouser@demo.com",

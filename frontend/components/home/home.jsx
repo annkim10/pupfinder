@@ -1,8 +1,17 @@
 import React from "react";
 import img from "../../assets/img1.jpg"
-
+import { Link } from "react-router-dom"
 
 class Home extends React.Component {
+
+    constructor(props) {
+        super(props)
+    
+    }
+
+    componentDidMount() {
+        this.props.fetchPups()  
+    }
 
     render() {
         return (
@@ -13,7 +22,7 @@ class Home extends React.Component {
                     <img className="hero-img" src={img} />
                 </div>
                 <div className="articles-home-div">
-                    <p>Learn more</p>
+                    <Link to="/pups">Pups Index</Link>
                 </div>    
             </div>
         </div>

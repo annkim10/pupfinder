@@ -17,11 +17,11 @@ class Pup < ApplicationRecord
 
     validates :org_id, :pup_name, :pup_breed, :pup_size, :pup_gender, :pup_age, :pup_bio, presence: true 
 
-    belongs_to :rescue_org, 
+    belongs_to :rescue_org,
+    primary_key: :id,
     foreign_key: :org_id,
     class_name: :RescueOrg
     
-    
-
+    has_many_attached :photos
 
 end

@@ -4,7 +4,7 @@ import configureStore from "./store/store"
 import Root from "./components/root"
 
 import { signup } from "./actions/session_actions"
-import * as SessionUtil from "./utils/session_api_util"
+import * as PupUtil from "./utils/pup_api_util"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDom.render(<Root store={store} />, root)
 
     window.store = store
-    window.signup = signup
-    window.SessionUtil = SessionUtil
+    window.PupUtil = PupUtil
 
 })

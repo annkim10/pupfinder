@@ -1,0 +1,10 @@
+.footer-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: #260273;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
