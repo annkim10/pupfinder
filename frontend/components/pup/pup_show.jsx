@@ -46,17 +46,38 @@ class PupShow extends React.Component {
                     <div className="pup-show-header">
                         <h1>Meet {pup.pupName} </h1>
                     </div>
-                    <div className="pup-show-img-div">
-                        <FaAngleLeft className="left-arrow" onClick={this.prevSlide}/>
-                        <FaAngleRight className="right-arrow" onClick={this.nextSlide}/>
-                        {pup.photoUrls.map((url, idx) => {
-                            return (
-                                <div className={idx === this.state.current ? 'slide-active' : 'slide'} key={idx}>
-                                    {idx === this.state.current && (<img className="pup-show-img" src={url}/>)}
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <section className="pup-show-profile-div">
+                        <div className="pup-show-img-div">
+                            <FaAngleLeft className="left-arrow" onClick={this.prevSlide}/>
+                            <FaAngleRight className="right-arrow" onClick={this.nextSlide}/>
+                            {pup.photoUrls.map((url, idx) => {
+                                return (
+                                    <div className={idx === this.state.current ? 'slide-active' : 'slide'} key={idx}>
+                                        {idx === this.state.current && (<img className="pup-show-img" src={url}/>)}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="pup-show-about-div">
+                            <div className="pup-show-about">
+                                <h1 className="pup-show-about-header">About</h1>
+                                <h2 className="pup-show-about-subheader">BREED</h2>
+                                    <p>{pup.pupBreed}</p>
+                                <h2 className="pup-show-about-subheader">SIZE</h2>
+                                    <p>{pup.pupSize}</p>
+                                <h2 className="pup-show-about-subheader">AGE</h2>
+                                    <p>{pup.pupAge}</p>
+                                <h2 className="pup-show-about-subheader">GENDER</h2>
+                                    <p>{pup.pupGender}</p>
+                                <h2 className="pup-show-about-subheader">BIO</h2>
+                                    <p>{pup.pupBio}</p>
+                            </div>
+                        </div>
+                        <div className="pup-show-inquiry">
+                            
+                        </div>
+                    </section>
+                    
                 </div>
             </div>
         )

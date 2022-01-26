@@ -207,7 +207,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
     path: "/pups/:pupId",
     component: _pup_pup_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_home_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -867,7 +867,9 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
         className: "pup-show-main-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "pup-show-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Meet ", pup.pupName, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Meet ", pup.pupName, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+        className: "pup-show-profile-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "pup-show-img-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaAngleLeft, {
         className: "left-arrow",
@@ -883,6 +885,24 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
           className: "pup-show-img",
           src: url
         }));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-about-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-about"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        className: "pup-show-about-header"
+      }, "About"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "pup-show-about-subheader"
+      }, "BREED"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, pup.pupBreed), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "pup-show-about-subheader"
+      }, "SIZE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, pup.pupSize), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "pup-show-about-subheader"
+      }, "AGE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, pup.pupAge), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "pup-show-about-subheader"
+      }, "GENDER"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, pup.pupGender), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+        className: "pup-show-about-subheader"
+      }, "BIO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, pup.pupBio))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "pup-show-inquiry"
       }))));
     }
   }]);

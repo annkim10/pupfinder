@@ -22,7 +22,7 @@ const App = () => (
             <Route path="/pups/index" component={PupIndexContainer} />
             <Route path="/pups/:pupId" component={PupShowContainer} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 );
 
