@@ -6,7 +6,6 @@ import PupShowContainer from "./pup_show_container";
 const PupIndexItem = (props) => {
     // console.log(props.pup)
     const {pup} = props
-    // console.log(pup)
     return (
         <div className="card-wrapper">
             <Link to={`/pups/${pup.id}`}>

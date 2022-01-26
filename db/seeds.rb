@@ -21,8 +21,13 @@ user3 = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.l
 user4 = User.create(first_name: 'Demo', last_name: 'User', zipcode: 11101, email: 'demouser@demo.com', password: 'password') 
 
 org1 = RescueOrg.create(org_name: 'Furever Homes', org_address: Faker::Address.full_address, org_email: 'fureverhomes@email.com', org_phone: '202-555-0166', org_website: 'www.fureverhomes.com', org_bio: 'We strive to find furever homes for all our pups' )
+org1.photo.attach(io: open("https://pupfinder-dev.s3.amazonaws.com/furever-logo.jpg"), filename: "furever-logo.jpg")
+
 org2 = RescueOrg.create(org_name: 'Search and Luv', org_address: Faker::Address.full_address, org_email: 'searchandluv@email.com', org_phone: '202-555-0166', org_website: 'www.searchluv.com', org_bio: 'We search, rescue, and find loving homes for every stray pup' )
+org2.photo.attach(io: open("https://pupfinder-dev.s3.amazonaws.com/search-logo.jpg"), filename: "search-logo.jpg")
+
 org3 = RescueOrg.create(org_name: 'Rescue Hearts', org_address: Faker::Address.full_address, org_email: 'rescuehearts@email.com', org_phone: '202-555-0166', org_website: 'www.rescuehearts.com', org_bio: 'We believe pups of any age, size or breed deserve loving homes' )
+org3.photo.attach(io: open("https://pupfinder-dev.s3.amazonaws.com/hearts-logo.jpg"), filename: "hearts-logo.jpg")
 
 pup1 = Pup.create(org_id: org1.id, pup_name: 'Pippa', pup_breed: 'Terrier Mix', pup_size: 'Small', pup_gender:'Female',pup_age: 'Puppy', pup_bio: "Pippa is a friendly, sweet and patient pup who is good with other dogs. Vaccinations are up to date and she is spayed. Introduce yourself to Pippa today!")
 

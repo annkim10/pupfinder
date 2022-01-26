@@ -21,4 +21,6 @@ class RescueOrg < ApplicationRecord
     foreign_key: :org_id,
     class_name: :Pup
 
+    has_one_attached :photo
+
 end

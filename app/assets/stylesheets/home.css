@@ -138,6 +138,14 @@
 .inner-home-div {
     /* background-color: blueviolet; */
     height: 550px;
+    position: relative;
+}
+
+.pup-home-div {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    display: block;
 }
 
 .hero-img {
@@ -152,4 +160,3 @@
     width: 100%;
     height: 500px;
 }
-
