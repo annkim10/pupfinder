@@ -11,6 +11,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.props.fetchPups()  
+        this.props.fetchRescues()
     }
 
     render() {

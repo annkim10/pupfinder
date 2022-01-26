@@ -1,7 +1,8 @@
 import React from "react"
 import {Link, withRouter} from "react-router-dom"
-import {FaAngleRight, FaAngleLeft} from "react-icons/fa"
-
+import {FaAngleRight, FaAngleLeft, FaMapMarkerAlt, FaRegEnvelopeOpen, FaPhoneAlt, FaLaptop, FaHeart} from "react-icons/fa"
+import {BiCalendarHeart} from "react-icons/bi"
+import pic from "../../assets/profile-pic.jpg"
 
 class PupShow extends React.Component {
     constructor(props) {
@@ -15,6 +16,10 @@ class PupShow extends React.Component {
         this.nextSlide = this.nextSlide.bind(this)
         this.prevSlide = this.prevSlide.bind(this)
     }
+
+    // componentDidMount() {
+    //     this.props.fetchRescue(this.props.pup.orgId)
+    // }
 
     nextSlide() {
         this.setState((prevState) => {
@@ -30,17 +35,18 @@ class PupShow extends React.Component {
 
     render() {
         // console.log("inside pupshow", this.props)
-        const {pup} = this.props
-        // console.log("inside pupshow", this.props.pup.pupName)
+        const {pup, rescue} = this.props
+        
+        // console.log("inside pupshow", rescue)
         // console.log("state", this.state)
         
         return (
             <div className="pup-show-div">
                 <div className="pup-show-top-links-wrapper">
-                    <div className="pup-show-top-links">             
+                    {/* <div className="pup-show-top-links">             
                         <p>Pup Search</p> 
                         <p>Next Pup</p>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="pup-show-main-wrapper">
                     <div className="pup-show-header">
@@ -73,11 +79,62 @@ class PupShow extends React.Component {
                                     <p>{pup.pupBio}</p>
                             </div>
                         </div>
-                        <div className="pup-show-inquiry">
-                            
+                        <div className="rescue-meet-div">
+                            <div className="thumbnails">
+                                <div className="pup-thumbnail-div">
+                                    <img className="pup-thumbnail" src={pup.photoUrls[0]} />
+                                </div>
+                                <BiCalendarHeart className="heart-icon-thumbnail"/>
+                                <div className="user-thumbnail-div">
+                                    <img className="user-thumbnail" src={pic} />
+                                </div>
+                            </div>
+                            <h1 className="meet-header">Interested in adopting 
+                                <span> {pup.pupName}</span>?
+                            </h1>
+                            <div className="meet-buttons">
+                                <button className="meet-button">MEET &amp; GREET</button>
+                                <button className="fav-button"><span><FaHeart className="heart-icon"/></span>FAVORITE</button>
+                            </div>
                         </div>
                     </section>
                     
+                </div>
+                <div className="pup-show-rescue-wrapper">
+                    <div className="pup-show-rescue-main">
+                        <div className="rescue-logo-div">
+                            <img className="rescue-logo" src={rescue.photoUrl} alt="rescue-logo"/>
+                        </div>
+                        <div className="rescue-about-div">
+                            <h1 className="rescue-name">{rescue.orgName}</h1>
+                            <div className="rescue-info-div">
+                                <div className="rescue-address-div">
+                                    <FaMapMarkerAlt className="map-icon"/>
+                                    <p className="rescue-address">
+                                        {rescue.orgAddress}
+                                    </p>
+                                </div>
+                                <div className="rescue-email-div">
+                                    <FaRegEnvelopeOpen className="email-icon"/>
+                                    <p className="rescue-email">
+                                        {rescue.orgEmail}
+                                    </p>
+                                </div>
+                                <div className="rescue-phone-div">
+                                    <FaPhoneAlt className="phone-icon"/>
+                                    <p className="rescue-phone">
+                                        {rescue.orgPhone}
+                                    </p>
+                                </div>
+                                <div className="rescue-website-div">
+                                    <FaLaptop className="website-icon"/>
+                                    <p className="rescue-website">
+                                        {rescue.orgWebsite}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
