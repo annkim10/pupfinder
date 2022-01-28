@@ -18,7 +18,10 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
-    // case 'meet':
+    case 'meet':
+      component = <ConfirmFormContainer />;
+      break;
+    // case 'edit':
     //   component = <ConfirmFormContainer />;
     //   break;
     default:

@@ -1,5 +1,6 @@
 import React from "react"
 import {FaLaptop, FaPeopleArrows } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 class Meet extends React.Component {
 
@@ -40,13 +41,14 @@ class Meet extends React.Component {
         // console.log("mount", this.props)
     }
 
+
     // componentDidUpdate(){
         
     // }
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(this.props.openModal({props: "hello"}))
+        this.props.processForm(this.state).then(this.props.openModal)
     }
 
     handleChange(field){

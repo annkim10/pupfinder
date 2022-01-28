@@ -6,3 +6,16 @@ export const postMeet = meet => {
     })
 }
 
+export const fetchMeets = userId => {
+    return $.ajax({
+        url: `/api/users/${userId}/meets`,
+        method: 'GET'
+    })
+}
+
+export const deleteMeet = (userId, meetId) => {
+    return $.ajax({
+        url: `/api/users/${userId}/meets/${meetId}`,
+        method: 'DELETE'
+    })
+}

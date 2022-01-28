@@ -14,7 +14,7 @@ class Api::MeetsController < ApplicationController
     end
 
     def destroy 
-        @meet = Meet.find(params[:id])
+        @meet = Meet.find_by(id: params[:id])
         if @meet 
             @meet.destroy 
             render :show 
@@ -28,8 +28,9 @@ class Api::MeetsController < ApplicationController
     end
 
     def index 
-        user = User.find_by(user_id: params[:user_id])
-        @meets = user.meets
+        @user = User.find_by(id: params[:user_id])
+        @meets = @user.meets
+        render :index
     end
 
     private 

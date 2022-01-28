@@ -1,4 +1,4 @@
-import { RECEIVE_MEET } from "../../actions/meet_actions";
+import { DELETE_MEET, RECEIVE_MEET, RECEIVE_MEETS } from "../../actions/meet_actions";
 
 
 const MeetReducers = (state={}, action) => {
@@ -6,6 +6,12 @@ const MeetReducers = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_MEET: 
             return action.meet;
+        case RECEIVE_MEETS:
+            return action.meets;
+        case DELETE_MEET:
+            const nextState = Object.assign({}, state)    
+            delete nextState[action.meetId]
+            return nextState
         default:
             return state
     }
