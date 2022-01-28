@@ -161,3 +161,23 @@ input {
 .demo-login-div > button {
   width: 100%;
 }
+
+
+
+/* MEET CONFIRMATION PAGE */
+
+
+.confirm-wrapper {
+  background: rgb(255, 255, 255);
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 600px;
+  min-height: 200px;
+  max-height: 400px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* padding: 10px; */
+}
+
+

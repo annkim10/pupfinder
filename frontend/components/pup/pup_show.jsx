@@ -7,12 +7,11 @@ import pic from "../../assets/profile-pic.jpg"
 class PupShow extends React.Component {
     constructor(props) {
         super(props)
-        // console.log("construct", this.props)
+        console.log("construct", this.props)
         this.state = {
             current: 0,
             length: this.props.pup.photoUrls.length
         }
-        // this.length = this.props.pup.photoUrls.length
         this.nextSlide = this.nextSlide.bind(this)
         this.prevSlide = this.prevSlide.bind(this)
     }
@@ -39,7 +38,7 @@ class PupShow extends React.Component {
         if (!pup || !rescue || !user) return null
         // console.log("inside pupshow", rescue)
         // console.log("state", this.state)
-        
+        // debugger
         return (
             <div className="pup-show-div">
                 <div className="pup-show-main-wrapper">
@@ -80,7 +79,7 @@ class PupShow extends React.Component {
                                 </div>
                                 <BiCalendarHeart className="heart-icon-thumbnail"/>
                                 <div className="user-thumbnail-div">
-                                    <img className="user-thumbnail" src={user.photoUrl} />
+                                    <img className="user-thumbnail" src={user.photoUrls[0]} />
                                 </div>
                             </div>
                             <h1 className="meet-header">Interested in adopting 
@@ -136,4 +135,4 @@ class PupShow extends React.Component {
     }
 }
 
-export default withRouter(PupShow)
+export default PupShow

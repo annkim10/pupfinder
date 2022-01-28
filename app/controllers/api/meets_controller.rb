@@ -5,7 +5,7 @@ class Api::MeetsController < ApplicationController
         if @meet.save 
             render :show
         else 
-            render @meet.errors.full_messages, status: 422
+            render json: @meet.errors.full_messages, status: 422
         end
     end
 
@@ -35,7 +35,7 @@ class Api::MeetsController < ApplicationController
     private 
 
     def meet_params 
-        params.require(:meet).permit(:pup_id, :user_id, :org_id, :date, :type, :start_time, :end_time)
+        params.require(:meet).permit(:user_id, :pup_id, :org_id, :date, :meeting_type, :start_time, :end_time)
     end
 
 end

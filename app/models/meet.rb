@@ -15,9 +15,10 @@
 #
 class Meet < ApplicationRecord
 
-    validates :pup_id, :user_id, :org_id, :date, :type, :start_time, :end_time, presence: true 
+    validates :pup_id, :user_id, :org_id, :date, :meeting_type, :start_time, :end_time, presence: true 
 
     belongs_to :user,
+    primary_key: :id,
     foreign_key: :user_id,
     class_name: :User 
 

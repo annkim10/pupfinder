@@ -260,10 +260,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pup_pup_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pup/pup_index_container */ "./frontend/components/pup/pup_index_container.js");
 /* harmony import */ var _pup_pup_show_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pup/pup_show_container */ "./frontend/components/pup/pup_show_container.js");
 /* harmony import */ var _meets_meet_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./meets/meet_form_container */ "./frontend/components/meets/meet_form_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.js");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _home_footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/footer */ "./frontend/components/home/footer.jsx");
+/* harmony import */ var _meets_confirm_form_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./meets/confirm_form_container */ "./frontend/components/meets/confirm_form_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.js");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _home_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/footer */ "./frontend/components/home/footer.jsx");
+
 
 
 
@@ -279,27 +281,27 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "app"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
     className: "top-navbar-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     exact: true,
     path: "/",
     component: _home_home_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-    exact: true,
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     path: "/users/:userId/:pupId/:rescueId/meet",
     component: _meets_meet_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-    exact: true,
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+    path: "/users/:userId/:pupId/:rescueId/meet/confirm",
+    component: _meets_confirm_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     path: "/users/:userId",
     component: _user_user_show_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-    path: "/pups/index",
-    component: _pup_pup_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-    exact: true,
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     path: "/pups/:rescueId/:pupId",
     component: _pup_pup_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+    path: "/pups/index",
+    component: _pup_pup_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
 };
 
@@ -474,21 +476,82 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var _this = undefined;
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-var MeetFormConfirm = function MeetFormConfirm() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "modal-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "form-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "close-x"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: _this.props.closeModal
-  }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Is so excited to meet you!")));
-};
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+ // const MeetFormConfirm = (props) => {
+//     console.log(props)
+//     return (
+//         <div className="modal-wrapper">
+//             <div className="confirm-wrapper">
+//                 <div className="close-x">
+//                         <button onClick={() => props.closeModal()}>X</button>
+//                 </div>
+//                 <h1>{props.pup} is excited to meet you!</h1>
+//                 <p>Rescue will contact you directly to coordinate your Meet &amp; Greet.</p>
+//             </div>
+//         </div>
+//     )
+// }
+
+var MeetFormConfirm = /*#__PURE__*/function (_React$Component) {
+  _inherits(MeetFormConfirm, _React$Component);
+
+  var _super = _createSuper(MeetFormConfirm);
+
+  function MeetFormConfirm() {
+    _classCallCheck(this, MeetFormConfirm);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(MeetFormConfirm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchPups();
+      this.props.fetchRescues();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log("inside confirm", this.props);
+      var pup = this.props.pup;
+      if (!pup) return null;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "modal-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "confirm-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "close-x"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        onClick: function onClick() {
+          return props.closeModal();
+        }
+      }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, " is excited to meet you!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Rescue will contact you directly to coordinate your Meet & Greet.")));
+    }
+  }]);
+
+  return MeetFormConfirm;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MeetFormConfirm);
 
@@ -507,43 +570,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _confirm_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./confirm_form */ "./frontend/components/meets/confirm_form.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_pup_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/pup_actions */ "./frontend/actions/pup_actions.js");
+/* harmony import */ var _actions_rescue_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/rescue_actions */ "./frontend/actions/rescue_actions.js");
 
 
 
-var mapState = function mapState(state) {
+
+
+
+
+var mapState = function mapState(state, ownProps) {
   return {
-    errors: state.errors.session
+    errors: state.errors.session // pup: state.entities.pups[ownProps.match.params.pupId]
+
   };
 };
 
 var mapDispatch = function mapDispatch(dispatch) {
   return {
-    closeModal: function (_closeModal) {
-      function closeModal() {
-        return _closeModal.apply(this, arguments);
-      }
-
-      closeModal.toString = function () {
-        return _closeModal.toString();
-      };
-
-      return closeModal;
-    }(function () {
-      return dispatch(closeModal());
-    }),
-    clearErrors: function (_clearErrors) {
-      function clearErrors() {
-        return _clearErrors.apply(this, arguments);
-      }
-
-      clearErrors.toString = function () {
-        return _clearErrors.toString();
-      };
-
-      return clearErrors;
-    }(function () {
-      return dispatch(clearErrors());
-    })
+    closeModal: function closeModal() {
+      return dispatch((0,_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__.closeModal)());
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__.clearErrors)());
+    },
+    fetchPups: function fetchPups() {
+      return dispatch((0,_actions_pup_actions__WEBPACK_IMPORTED_MODULE_4__.fetchPups)());
+    },
+    fetchRescues: function fetchRescues() {
+      return dispatch((0,_actions_rescue_actions__WEBPACK_IMPORTED_MODULE_5__.fetchRescues)());
+    }
   };
 };
 
@@ -602,15 +660,15 @@ var Meet = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      pupId: parseInt(_this.props.match.params.pupId),
-      userId: parseInt(_this.props.match.params.userId),
-      orgId: parseInt(_this.props.match.params.rescueId),
+      pup_id: parseInt(_this.props.match.params.pupId),
+      user_id: parseInt(_this.props.match.params.userId),
+      org_id: parseInt(_this.props.match.params.rescueId),
       date: "",
-      type: "",
-      startTime: "",
-      endTime: ""
+      meeting_type: "",
+      start_time: "",
+      end_time: ""
     };
-    _this.startTimes = _this.startTimes();
+    _this.startTimes = [" "].concat(_this.startTimes());
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -646,7 +704,9 @@ var Meet = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.processForm(this.state).then(this.props.openModal);
+      this.props.processForm(this.state).then(this.props.openModal({
+        props: "hello"
+      }));
     }
   }, {
     key: "handleChange",
@@ -660,7 +720,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log("inside meet", this.state);
+      // console.log("inside meet", this.state)
       var _this$props = this.props,
           pup = _this$props.pup,
           rescue = _this$props.rescue;
@@ -701,7 +761,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
         className: "start-time"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, " Start Time "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
         className: "time-select",
-        onChange: this.handleChange('startTime')
+        onChange: this.handleChange('start_time')
       }, this.startTimes.map(function (time, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
           key: idx
@@ -710,7 +770,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
         className: "end-time"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, " End Time "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("select", {
         className: "time-select",
-        onChange: this.handleChange('endTime')
+        onChange: this.handleChange('end_time')
       }, this.startTimes.map(function (time, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("option", {
           key: idx
@@ -725,7 +785,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
         type: "radio",
         value: "virtual",
         name: "type",
-        onChange: this.handleChange('type'),
+        onChange: this.handleChange('meeting_type'),
         defaultChecked: "checked"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
         className: "checkmark"
@@ -735,7 +795,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
         type: "radio",
         value: "in-person",
         name: "type",
-        onChange: this.handleChange('type')
+        onChange: this.handleChange('meeting_type')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
         className: "checkmark"
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -845,10 +905,9 @@ function Modal(_ref) {
     case 'signup':
       component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       break;
-
-    case 'meet':
-      component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_meets_confirm_form_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-      break;
+    // case 'meet':
+    //   component = <ConfirmFormContainer />;
+    //   break;
 
     default:
       return null;
@@ -1177,7 +1236,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _pup_show_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pup_show_container */ "./frontend/components/pup/pup_show_container.js");
 
 
@@ -1186,10 +1244,11 @@ __webpack_require__.r(__webpack_exports__);
 var PupIndexItem = function PupIndexItem(props) {
   // console.log(props.pup)
   var pup = props.pup;
+  var rescueId = pup.orgId;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "card-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "/pups/".concat(pup.orgId, "/").concat(pup.id)
+    to: "/pups/".concat(rescueId, "/").concat(pup.id)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "card-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -1208,7 +1267,7 @@ var PupIndexItem = function PupIndexItem(props) {
   }, pup.pupBreed))))));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.withRouter)(PupIndexItem));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PupIndexItem);
 
 /***/ }),
 
@@ -1225,7 +1284,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/bi */ "./node_modules/react-icons/bi/index.esm.js");
 /* harmony import */ var _assets_profile_pic_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/profile-pic.jpg */ "./frontend/assets/profile-pic.jpg");
@@ -1267,13 +1325,12 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, PupShow);
 
-    _this = _super.call(this, props); // console.log("construct", this.props)
-
+    _this = _super.call(this, props);
+    console.log("construct", _this.props);
     _this.state = {
       current: 0,
       length: _this.props.pup.photoUrls.length
-    }; // this.length = this.props.pup.photoUrls.length
-
+    };
     _this.nextSlide = _this.nextSlide.bind(_assertThisInitialized(_this));
     _this.prevSlide = _this.prevSlide.bind(_assertThisInitialized(_this));
     return _this;
@@ -1322,6 +1379,7 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
           user = _this$props.user;
       if (!pup || !rescue || !user) return null; // console.log("inside pupshow", rescue)
       // console.log("state", this.state)
+      // debugger
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "pup-show-div"
@@ -1378,7 +1436,7 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
         className: "user-thumbnail-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         className: "user-thumbnail",
-        src: user.photoUrl
+        src: user.photoUrls[0]
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
         className: "meet-header"
       }, "Interested in adopting", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, " ", pup.pupName), "?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1437,7 +1495,7 @@ var PupShow = /*#__PURE__*/function (_React$Component) {
   return PupShow;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.withRouter)(PupShow));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PupShow);
 
 /***/ }),
 

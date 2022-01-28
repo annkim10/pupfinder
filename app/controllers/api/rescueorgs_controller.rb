@@ -6,7 +6,7 @@ class Api::RescueorgsController < ApplicationController
     end
 
     def show 
-        @rescue = RescueOrg.with_attached_photo.find(params[:id])
+        @rescue = RescueOrg.with_attached_photo.find_by(id: params[:id])
         render :show
     end
 

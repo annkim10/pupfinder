@@ -21,9 +21,10 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_one_attached :photo
+    has_many_attached :photo
 
     has_many :meets,
+    primary_key: :id,
     foreign_key: :user_id, 
     class_name: :Meet 
 

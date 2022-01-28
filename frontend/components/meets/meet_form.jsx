@@ -6,15 +6,15 @@ class Meet extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            pupId: parseInt(this.props.match.params.pupId),
-            userId: parseInt(this.props.match.params.userId),
-            orgId: parseInt(this.props.match.params.rescueId),
+            pup_id: parseInt(this.props.match.params.pupId),
+            user_id: parseInt(this.props.match.params.userId),
+            org_id: parseInt(this.props.match.params.rescueId),
             date: "",
-            type: "",
-            startTime: "",
-            endTime: ""
+            meeting_type: "",
+            start_time: "",
+            end_time: ""
         }
-        this.startTimes = this.startTimes()
+        this.startTimes = [" "].concat(this.startTimes())
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -46,7 +46,7 @@ class Meet extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(this.props.openModal)
+        this.props.processForm(this.state).then(this.props.openModal({props: "hello"}))
     }
 
     handleChange(field){
@@ -54,7 +54,7 @@ class Meet extends React.Component {
     }
 
     render() {
-        console.log("inside meet", this.state)
+        // console.log("inside meet", this.state)
         const { pup, rescue } = this.props
         if (!pup) return null 
         if (!rescue) return null
@@ -88,13 +88,13 @@ class Meet extends React.Component {
                                 <div className="time-div"> 
                                     <div className="start-time">
                                         <label> Start Time </label>
-                                        <select className="time-select" onChange={this.handleChange('startTime')}>
+                                        <select className="time-select" onChange={this.handleChange('start_time')}>
                                         {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
                                         </select>
                                     </div>
                                     <div className="end-time">
                                         <label> End Time </label>
-                                        <select className="time-select" onChange={this.handleChange('endTime')}>
+                                        <select className="time-select" onChange={this.handleChange('end_time')}>
                                         {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
                                         </select>
                                     </div>
@@ -103,11 +103,11 @@ class Meet extends React.Component {
                                     <label> Select Meeting Type </label>
                                     <div className="meeting-type-div">
                                        <label className="container">Virtual
-                                            <input type="radio" value="virtual" name="type" onChange={this.handleChange('type')} defaultChecked="checked"/>
+                                            <input type="radio" value="virtual" name="type" onChange={this.handleChange('meeting_type')} defaultChecked="checked"/>
                                             <span className="checkmark"></span>
                                         </label>
                                         <label className="container">In-person
-                                            <input type="radio" value="in-person" name="type" onChange={this.handleChange('type')}/>
+                                            <input type="radio" value="in-person" name="type" onChange={this.handleChange('meeting_type')}/>
                                             <span className="checkmark"></span>
                                         </label>
                                     </div>
