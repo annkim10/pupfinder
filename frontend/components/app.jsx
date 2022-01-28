@@ -21,8 +21,8 @@ const App = () => (
             <Route exact path="/" component={HomeContainer}/>
             <Route exact path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
             <Route exact path="/users/:userId" component={UserShowContainer} />
-            <Route exact path="/pups/index" component={PupIndexContainer} />
-            <Route exact path="/pups/:pupId" component={PupShowContainer} />
+            <Route path="/pups/index" component={PupIndexContainer} />
+            <Route exact path="/pups/:rescueId/:pupId" component={PupShowContainer} />
         </Switch>
         {/* <Footer /> */}
     </div>

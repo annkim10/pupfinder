@@ -5,7 +5,7 @@ import {fetchRescue} from "../../actions/rescue_actions"
 
 const mapState = (state, ownProps) => ({
     pup: state.entities.pups[ownProps.match.params.pupId],
-    rescue: state.entities.rescues[state.entities.pups[ownProps.match.params.pupId].orgId],
+    rescue: state.entities.rescues[ownProps.match.params.rescueId],
     pupId: parseInt(ownProps.match.params.pupId),
     user: state.entities.users[state.session.id]
 })

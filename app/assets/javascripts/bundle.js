@@ -294,12 +294,11 @@ var App = function App() {
     path: "/users/:userId",
     component: _user_user_show_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
-    exact: true,
     path: "/pups/index",
     component: _pup_pup_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     exact: true,
-    path: "/pups/:pupId",
+    path: "/pups/:rescueId/:pupId",
     component: _pup_pup_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   })));
 };
@@ -463,6 +462,95 @@ var mapDispatch = function mapDispatch(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/meets/confirm_form.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/meets/confirm_form.jsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _this = undefined;
+
+
+
+var MeetFormConfirm = function MeetFormConfirm() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "modal-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "form-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "close-x"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: _this.props.closeModal
+  }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Is so excited to meet you!")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MeetFormConfirm);
+
+/***/ }),
+
+/***/ "./frontend/components/meets/confirm_form_container.js":
+/*!*************************************************************!*\
+  !*** ./frontend/components/meets/confirm_form_container.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _confirm_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./confirm_form */ "./frontend/components/meets/confirm_form.jsx");
+
+
+
+var mapState = function mapState(state) {
+  return {
+    errors: state.errors.session
+  };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    closeModal: function (_closeModal) {
+      function closeModal() {
+        return _closeModal.apply(this, arguments);
+      }
+
+      closeModal.toString = function () {
+        return _closeModal.toString();
+      };
+
+      return closeModal;
+    }(function () {
+      return dispatch(closeModal());
+    }),
+    clearErrors: function (_clearErrors) {
+      function clearErrors() {
+        return _clearErrors.apply(this, arguments);
+      }
+
+      clearErrors.toString = function () {
+        return _clearErrors.toString();
+      };
+
+      return clearErrors;
+    }(function () {
+      return dispatch(clearErrors());
+    })
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mapState, mapDispatch)(_confirm_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/meets/meet_form.jsx":
 /*!*************************************************!*\
   !*** ./frontend/components/meets/meet_form.jsx ***!
@@ -558,7 +646,7 @@ var Meet = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.processForm(this.state);
+      this.props.processForm(this.state).then(this.props.openModal);
     }
   }, {
     key: "handleChange",
@@ -681,6 +769,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_pup_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/pup_actions */ "./frontend/actions/pup_actions.js");
 /* harmony import */ var _actions_meet_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/meet_actions */ "./frontend/actions/meet_actions.js");
 /* harmony import */ var _actions_rescue_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/rescue_actions */ "./frontend/actions/rescue_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -702,7 +792,10 @@ var mapDispatch = function mapDispatch(dispatch) {
       return dispatch((0,_actions_rescue_actions__WEBPACK_IMPORTED_MODULE_4__.fetchRescues)());
     },
     processForm: function processForm(meet) {
-      return dispatch((0,_actions_meet_actions__WEBPACK_IMPORTED_MODULE_3__.receiveMeet)(meet));
+      return dispatch((0,_actions_meet_actions__WEBPACK_IMPORTED_MODULE_3__.postMeet)(meet));
+    },
+    openModal: function openModal() {
+      return dispatch((0,_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__.openModal)('meet'));
     }
   };
 };
@@ -726,6 +819,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.js");
 /* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session_form/login_form_container */ "./frontend/components/session_form/login_form_container.js");
+/* harmony import */ var _meets_confirm_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../meets/confirm_form_container */ "./frontend/components/meets/confirm_form_container.js");
+
 
 
 
@@ -749,6 +844,10 @@ function Modal(_ref) {
 
     case 'signup':
       component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      break;
+
+    case 'meet':
+      component = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_meets_confirm_form_container__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       break;
 
     default:
@@ -1090,7 +1189,7 @@ var PupIndexItem = function PupIndexItem(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "card-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "/pups/".concat(pup.id)
+    to: "/pups/".concat(pup.orgId, "/").concat(pup.id)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "card-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -1365,7 +1464,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapState = function mapState(state, ownProps) {
   return {
     pup: state.entities.pups[ownProps.match.params.pupId],
-    rescue: state.entities.rescues[state.entities.pups[ownProps.match.params.pupId].orgId],
+    rescue: state.entities.rescues[ownProps.match.params.rescueId],
     pupId: parseInt(ownProps.match.params.pupId),
     user: state.entities.users[state.session.id]
   };

@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import Meet from "./meet_form"
 import { fetchPups } from "../../actions/pup_actions";
-import { receiveMeet } from "../../actions/meet_actions"
+import { postMeet } from "../../actions/meet_actions"
 import { fetchRescues } from "../../actions/rescue_actions"
+import { openModal } from "../../actions/modal_actions";
 
 
 export const mapState = (state, ownProps) => ({
@@ -14,7 +15,8 @@ export const mapState = (state, ownProps) => ({
 export const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
     fetchRescues: () => dispatch(fetchRescues()),
-    processForm: meet => dispatch(receiveMeet(meet))
+    processForm: meet => dispatch(postMeet(meet)),
+    openModal: () => dispatch(openModal('meet'))
 })
 
 export default connect(mapState, mapDispatch)(Meet)

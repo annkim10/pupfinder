@@ -8,7 +8,7 @@ const PupIndexItem = (props) => {
     const {pup} = props
     return (
         <div className="card-wrapper">
-            <Link to={`/pups/${pup.id}`}>
+            <Link to={`/pups/${pup.orgId}/${pup.id}`}>
                 <div className="card-body">
                     <img src={pup.photoUrls[0]} className="pup-card-img"/>
                     <div className="pup-card-text">

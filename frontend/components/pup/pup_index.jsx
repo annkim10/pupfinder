@@ -1,6 +1,6 @@
 import React from "react";
 import PupIndexItem from "./pup_index_item";
-import {withRouter} from "react-router-dom"
+import {withRouter, Link} from "react-router-dom"
 
 class PupIndex extends React.Component {
 
@@ -20,6 +20,7 @@ class PupIndex extends React.Component {
         return (
             <div className="card-div">
                 {pups.map(pup => <PupIndexItem key={pup.id} pup={pup} />)}
+                {/* {pups.map(pup => <Link to={`/pups/${pup.orgId}/${pup.id}`} key={pup.id} pup={pup}/>)} */}
             </div>
         ) 
     }
