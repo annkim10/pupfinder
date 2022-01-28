@@ -30,7 +30,7 @@ class NavBar extends React.Component {
                         </p>
                     </div>
                     <div className="fav-icon-div">
-                        <Link to={`/users/1`} className="fav-icon"><FaHeart size={20}/> </Link>
+                        <Link to={`/users/${currentUser.id}`} className="fav-icon"><FaHeart size={20}/> </Link>
                         {/* <button className="fav-button"> <FaHeart size={20}/> </button> */}
                     </div>
                     <button className="nav-logout" onClick={() => logout()}>Logout</button>

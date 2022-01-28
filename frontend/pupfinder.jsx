@@ -3,7 +3,7 @@ import ReactDom from "react-dom"
 import configureStore from "./store/store"
 import Root from "./components/root"
 
-import { fetchRescue, fetchRescues, receiveRescues } from "./actions/rescue_actions"
+
 import * as RescueUtil from "./utils/rescue_api_util"
 
 
@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDom.render(<Root store={store} />, root)
 
     window.store = store
-    window.RescueUtil = RescueUtil.fetchRescues
-    window.fetchRescues = fetchRescues
-    window.receiveRescues = receiveRescues
+
 
 })

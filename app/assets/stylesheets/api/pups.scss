@@ -98,25 +98,7 @@
     width: 100%;
     display: flex;
     height: auto;
-    // justify-self: space-between;
-}
-
-.pup-show-top-links-wrapper {
-    background-color: #260273;
-    width: 125vw;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.pup-show-top-links {
-    width: 85%;
-    color: white;
-    font-size: 13px;
-    font-weight: 200;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-self: space-evenly;
 }
 
 .pup-show-header {
@@ -176,7 +158,7 @@
 //pup show - about 
 
 .pup-show-about-div {
-    width: 55%;
+    width: 400px;
     height: auto;
     padding: 40px;
 }
@@ -271,7 +253,8 @@
     padding-right: 10px;
     // padding-left: 10px;
     font-size: 12px;
-    width: 80%
+    width: 80%;
+    line-height: 1.2;
 }
 
 
@@ -287,8 +270,8 @@
 .rescue-meet-div {
     background-color: #260273;
     border-radius: 20px;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 235px;
+    max-width: 265px;
     height: 300px;
     margin-top: 30px;
     display: flex;
@@ -350,6 +333,8 @@
     flex-direction: column;
     height: 500px;
     justify-content: space-around;
+    text-align: center;
+
 }
 
 .meet-button {
@@ -361,6 +346,9 @@
     // padding: 8px 5px;
     width: 100%;
     height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fav-button {

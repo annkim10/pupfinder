@@ -17,9 +17,9 @@ class PupShow extends React.Component {
         this.prevSlide = this.prevSlide.bind(this)
     }
 
-    // componentDidMount() {
-    //     this.props.fetchRescue(this.props.pup.orgId)
-    // }
+    componentDidMount() {
+        this.props.fetchRescue(this.props.pup.orgId)
+    }
 
     nextSlide() {
         this.setState((prevState) => {
@@ -35,19 +35,13 @@ class PupShow extends React.Component {
 
     render() {
         // console.log("inside pupshow", this.props)
-        const {pup, rescue} = this.props
-        
+        const {pup, rescue, user} = this.props
+        if (!pup || !rescue || !user) return null
         // console.log("inside pupshow", rescue)
         // console.log("state", this.state)
         
         return (
             <div className="pup-show-div">
-                <div className="pup-show-top-links-wrapper">
-                    {/* <div className="pup-show-top-links">             
-                        <p>Pup Search</p> 
-                        <p>Next Pup</p>
-                    </div> */}
-                </div>
                 <div className="pup-show-main-wrapper">
                     <div className="pup-show-header">
                         <h1>Meet {pup.pupName} </h1>
@@ -86,14 +80,15 @@ class PupShow extends React.Component {
                                 </div>
                                 <BiCalendarHeart className="heart-icon-thumbnail"/>
                                 <div className="user-thumbnail-div">
-                                    <img className="user-thumbnail" src={pic} />
+                                    <img className="user-thumbnail" src={user.photoUrl} />
                                 </div>
                             </div>
                             <h1 className="meet-header">Interested in adopting 
                                 <span> {pup.pupName}</span>?
                             </h1>
                             <div className="meet-buttons">
-                                <button className="meet-button">MEET &amp; GREET</button>
+                                <Link className="meet-button" to={`/users/${user.id}/${pup.id}/${rescue.id}/meet`}>MEET &amp; GREET</Link>
+                                {/* <button className="meet-button">MEET &amp; GREET</button> */}
                                 <button className="fav-button"><span><FaHeart className="heart-icon"/></span>FAVORITE</button>
                             </div>
                         </div>
