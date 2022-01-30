@@ -9,6 +9,9 @@ class UserShow extends React.Component {
         const {currentUser} = this.props
         return (
             <div className="user-show-outer-div">
+                <div className="gray-background">
+                    <p>&nbsp;</p>
+                </div>
                 <div className="user-show-inner-div">
                     <div className="user-profile">
                         <div className="user-about">
@@ -17,14 +20,14 @@ class UserShow extends React.Component {
                             <p className="user-name">{currentUser.firstName} {currentUser.lastName}</p>
                             <p>{currentUser.email}</p>
                             <div className="user-links">
-                                <Link className="user-show-meet-link" to={`/users/${currentUser.id}/meets`}>Meet &amp; Greets</Link>
+                                <Link className="user-show-link" to={`/users/${currentUser.id}/meets`}>Meet &amp; Greets</Link>
                                 <br/>
-                                <h1>Liked Pups</h1>
+                                <h1 className="user-show-link">Liked Pups</h1>
                             </div>
                         </div>
                     </div>
                     <div className="user-info">
-                            <h1>Adopter profile</h1>
+                            <h1>Adopter Profile</h1>
                     </div>
                 </div>
             </div>

@@ -29,6 +29,17 @@ class EditMeetForm extends React.Component {
         return startTimes
     }
 
+    endTime(startTime) {
+            var idx = this.startTimes.indexOf(startTime)
+            if (idx !== this.startTimes.length-1) {
+                var endTime = this.startTimes[(idx+1) % this.startTimes.length]
+                return endTime
+            } else {
+                return '9:00PM'
+            }
+    }
+
+
     setDateRange(){
         const date = new Date()
         let z = n => ('0' + n).slice(-2)
@@ -51,8 +62,12 @@ class EditMeetForm extends React.Component {
         this.props.processForm(this.state).then(this.props.openModal)
     }
 
-    handleChange(field){
-        return (e) => this.setState({[field]: e.target.value})
+    handleChange(field) {
+        if (field === 'start_time') {
+            return (e) => this.setState({[field]: e.target.value, end_time: this.endTime(e.target.value)})
+        } else {
+            return (e) => this.setState({[field]: e.target.value})
+        }
     }
 
     render() {
@@ -104,9 +119,7 @@ class EditMeetForm extends React.Component {
                                             </div>
                                             <div className="end-time">
                                                 <label> End Time </label>
-                                                <select className="time-select" onChange={this.handleChange('end_time')}>
-                                                {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
-                                                </select>
+                                                <input id="end-time-select" type="text" defaultValue={meet.end_time} />
                                             </div>
                                         </div>
                                         <div>
@@ -133,9 +146,7 @@ class EditMeetForm extends React.Component {
                         </div>   
                     </div>
                 </div>
-            </div>
-
-           
+            </div>  
         )
     }
 

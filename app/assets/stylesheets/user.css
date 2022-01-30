@@ -1,12 +1,19 @@
 .user-show-outer-div {
-    background-color: rgb(233, 233, 233);
-    margin-top: 10px;
     height: 100%;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.gray-background {
+    background-color: rgb(233, 233, 233);
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
 }
 
 .user-show-inner-div {
@@ -19,7 +26,7 @@
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     margin-top: 20px;
-    height: 90%;
+    height: 800px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
     display: flex;
     /* align-items: center; */
@@ -29,6 +36,13 @@
 .user-name {
     color: #260273;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+    width: 50%;
+    padding-bottom: 15px
 }
 
 .user-about {
@@ -65,7 +79,14 @@
 
 .user-links {
     /* background-color: greenyellow; */
-    padding: 30px;
     display: flex;
-    background-color: aqua;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-evenly;
+}
+
+.user-show-link {
+    padding: 15px 70px;
+    border: 1px solid gray;
+    border-radius: 20px;
 }
