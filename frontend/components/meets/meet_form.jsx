@@ -7,6 +7,8 @@ class Meet extends React.Component {
     constructor(props) {
         super(props)
         // this.state = this.props.meet
+        this.dateMin = null
+        this.dateMax = null
         this.state = {
             pup_id: parseInt(this.props.match.params.pupId),
             user_id: parseInt(this.props.match.params.userId),
@@ -18,6 +20,22 @@ class Meet extends React.Component {
         }
         this.startTimes = [" "].concat(this.startTimes())
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.fetchPups()
+        this.props.fetchRescues()
+        this.setDateRange()
+        // console.log("mount", this.props)
+    }
+
+    setDateRange(){
+        const date = new Date()
+        let z = n => ('0' + n).slice(-2)
+        var [month, day, year] = [z(date.getMonth()+1), date.getDate(), date.getFullYear()];
+       
+        this.min = `${year}-${month}-${day}`
+        this.max = `${year + 1}-${month}-${day}`
     }
 
     startTimes() {
@@ -36,33 +54,34 @@ class Meet extends React.Component {
         return startTimes
     }
 
-    componentDidMount() {
-        this.props.fetchPups()
-        this.props.fetchRescues()
-        // console.log("mount", this.props)
+    endTime(startTime) {
+            var idx = this.startTimes.indexOf(startTime)
+            if (idx !== this.startTimes.length-1) {
+                var endTime = this.startTimes[(idx+1) % this.startTimes.length]
+                return endTime
+            } else {
+                return '9:00PM'
+            }
     }
-
-
-    // componentDidUpdate(){
-        
-    // }
 
     handleSubmit(e) {
         e.preventDefault()
         this.props.processForm(this.state).then(this.props.openModal)
     }
 
-    handleChange(field){
-        return (e) => this.setState({[field]: e.target.value})
+    handleChange(field) {
+        if (field === 'start_time') {
+            return (e) => this.setState({[field]: e.target.value, end_time: this.endTime(e.target.value)})
+        } else {
+            return (e) => this.setState({[field]: e.target.value})
+        }
     }
 
     render() {
-        
         const { pup, rescue } = this.props
-        // console.log("inside meet", this.props.)
+        console.log("inside meet", this.state)
         if (!pup) return null 
         if (!rescue) return null
-
         return (
             <div className="meet-greet-form-div">
                     <div className="header-div">
@@ -74,7 +93,6 @@ class Meet extends React.Component {
                             </h1>
                         </div>
                     </div>
-                    {/* <div className="calendar-div"> */}
                         <div className="form-div">
                             <form className="meet-form" onSubmit={this.handleSubmit}>
                                 <div>
@@ -87,7 +105,7 @@ class Meet extends React.Component {
                                </div>
                                 <div>
                                     <label> Select Date </label>
-                                    <input type="date" onChange={this.handleChange('date')} />  
+                                    <input type="date" onChange={this.handleChange('date')} min={this.min} max={this.max} />  
                                 </div>
                                 <div className="time-div"> 
                                     <div className="start-time">
@@ -98,16 +116,17 @@ class Meet extends React.Component {
                                     </div>
                                     <div className="end-time">
                                         <label> End Time </label>
-                                        <select className="time-select" onChange={this.handleChange('end_time')}>
-                                        {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
-                                        </select>
+                                        <input id="end-time-select" type="text" defaultValue={this.state.end_time} />
                                     </div>
+                                </div>
+                                <div>
+                                    <p className="meet-time-note">All Meet &amp; Greets are scheduled for 1 hour. You may request to change the time of your appointment with the rescue organization. </p>
                                 </div>
                                 <div className="meeting-type-wrapper">
                                     <label> Select Meeting Type </label>
                                     <div className="meeting-type-div">
                                        <label className="container">Virtual
-                                            <input type="radio" value="virtual" name="type" onChange={this.handleChange('meeting_type')} defaultChecked="checked"/>
+                                            <input type="radio" value="virtual" name="type" onChange={this.handleChange('meeting_type')} />
                                             <span className="checkmark"></span>
                                         </label>
                                         <label className="container">In-person

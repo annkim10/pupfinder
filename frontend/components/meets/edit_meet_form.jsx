@@ -9,6 +9,8 @@ class EditMeetForm extends React.Component {
         super(props)
         this.startTimes = [" "].concat(this.startTimes())
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.dateMin = null
+        this.dateMax = null
     }
 
     startTimes() {
@@ -27,10 +29,20 @@ class EditMeetForm extends React.Component {
         return startTimes
     }
 
+    setDateRange(){
+        const date = new Date()
+        let z = n => ('0' + n).slice(-2)
+        var [month, day, year] = [z(date.getMonth()+1), date.getDate(), date.getFullYear()];
+       
+        this.min = `${year}-${month}-${day}`
+        this.max = `${year + 1}-${month}-${day}`
+    }
+
     componentDidMount() {
         this.props.fetchMeets(this.props.userId)
         this.props.fetchPups()
         this.props.fetchRescues()
+        this.setDateRange()
         // console.log("mount", this.props)
     }
 
@@ -81,7 +93,7 @@ class EditMeetForm extends React.Component {
                                     </div>
                                         <div>
                                             <label> Select Date </label>
-                                            <input type="date" onChange={this.handleChange('date')} defaultValue={meet.date}/>  
+                                            <input type="date" onChange={this.handleChange('date')} defaultValue={meet.date} min={this.min} max={this.max}/>  
                                         </div>
                                         <div className="time-div"> 
                                             <div className="start-time">
@@ -96,6 +108,9 @@ class EditMeetForm extends React.Component {
                                                 {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div>
+                                            <p className="meet-time-note">All Meet &amp; Greets are scheduled for 1 hour. You may request to change the time of your appointment with the rescue organization. </p>
                                         </div>
                                         <div className="meeting-type-wrapper">
                                             <label> Select Meeting Type </label>

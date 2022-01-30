@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .meet-greet-form-div {
     width: 100%;
     display: flex;
@@ -64,12 +62,6 @@
     outline: none;
 }
 
-select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-}
-
 .time-dropdn select {
     width: 130px;
     min-height: 35px;
@@ -80,16 +72,20 @@ select {
 }
 
 .time-select {
-    width: 134px;
-    min-height: 35px;
-    border-radius: 4px;
-    padding-left: 15px;
+    width: 125px;
+    // min-height: 35px;
+    // border-radius: 4px;
+    // padding-left: 15px;
+}
+
+#end-time-select {
+    width: 130px;
 }
 
 .time-dropdn::after {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
+   -webkit-appearance: none !important;
+   -moz-appearance: none !important;
+   appearance: none !important;
 }
 
 .form-div label {
