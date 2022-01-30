@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show] do 
       resources :meets 
     end
-    
+    resources :favorites, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
+
     resources :pups, only: [:index, :show]
+
     resources :rescueorgs, only: [:index, :show]
   end
 

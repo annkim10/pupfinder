@@ -1,0 +1,32 @@
+// Place all the styles related to the api/favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pup-show-fav-button-div {
+    z-index: 30;
+    position: absolute;
+}
+
+.pup-show-fav-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.7;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 190px;
+    margin-top: 15px
+}
+
+.pup-show-fav-button:hover {
+    opacity: 1;
+    color: #260273
+}
+
+.pup-show-fav-button:hover .favorite-icon {
+    fill: #260273
+}
