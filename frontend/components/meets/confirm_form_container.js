@@ -8,7 +8,8 @@ import { withRouter } from "react-router-dom"
 
 const mapState = (state, ownProps) => ({
     errors: state.errors.session,
-    // pup: state.entities.pups[ownProps.match.params.pupId]
+    pups: state.entities.pups,
+    rescues: state.entities.rescues
 })
 
 const mapDispatch = dispatch => ({

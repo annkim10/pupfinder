@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import SignupFormContainer from "../session_form/signup_form_container"
 import LoginFormContainer from "../session_form/login_form_container"
 import ConfirmFormContainer from "../meets/confirm_form_container"
+import EditMeetFormContainer from "../meets/edit_meet_form_container";
 
 function Modal({modal, closeModal}) {
 
@@ -22,7 +23,7 @@ function Modal({modal, closeModal}) {
       component = <ConfirmFormContainer />;
       break;
     // case 'edit':
-    //   component = <ConfirmFormContainer />;
+    //   component = <EditMeetFormContainer />;
     //   break;
     default:
       return null;

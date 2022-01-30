@@ -19,3 +19,11 @@ export const deleteMeet = (userId, meetId) => {
         method: 'DELETE'
     })
 }
+
+export const updateMeet = (userId, meetId, meet) => {
+    return $.ajax({
+        url: `/api/users/${userId}/meets/${meetId}`,
+        method: 'PATCH',
+        data: {meet}
+    })
+}

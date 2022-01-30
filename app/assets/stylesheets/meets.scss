@@ -67,10 +67,18 @@
 
 .edit-button, .trash-button {
     font-size: 1.4rem;
-    color: rgb(37, 37, 37)
+    color: rgb(37, 37, 37);
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .edit-button:hover, .trash-button:hover {
     font-size: 1.5rem;
+    background-color: #dbdbdb;
+    border-radius: 50%;
     color: #260273;
 }

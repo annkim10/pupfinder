@@ -24,7 +24,12 @@ class Api::MeetsController < ApplicationController
     end
 
     def update 
-        
+         @meet = Meet.find_by(id: params[:id])
+         if @meet.update(meet_params)
+            render :edit 
+         else
+             render json: @meet.errors.full_messages, status: 422
+        end
     end
 
     def index 

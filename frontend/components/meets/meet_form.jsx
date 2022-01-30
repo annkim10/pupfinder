@@ -6,6 +6,7 @@ class Meet extends React.Component {
 
     constructor(props) {
         super(props)
+        // this.state = this.props.meet
         this.state = {
             pup_id: parseInt(this.props.match.params.pupId),
             user_id: parseInt(this.props.match.params.userId),
@@ -56,8 +57,9 @@ class Meet extends React.Component {
     }
 
     render() {
-        // console.log("inside meet", this.state)
+        
         const { pup, rescue } = this.props
+        // console.log("inside meet", this.props.)
         if (!pup) return null 
         if (!rescue) return null
 

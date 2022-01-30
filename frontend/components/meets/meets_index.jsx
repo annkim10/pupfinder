@@ -14,7 +14,7 @@ class MeetsIndex extends React.Component {
     render() {
         // console.log(this.props)
         const meets = Object.values(this.props.meets)
-        const {pups, rescues, deleteMeet } = this.props
+        const {pups, rescues, deleteMeet, openModal } = this.props
         if (!meets) return null
         if (!pups || !rescues) return null
         // console.log("inside meet index", this.props)
@@ -28,7 +28,7 @@ class MeetsIndex extends React.Component {
                                 <ul>
                                     <div className='meet-grid'>
                                         {meets.map(meet => <MeetIndexItem key={meet.id} meet={meet} 
-                                        pup={pups[meet.pupId]} deleteMeet={deleteMeet} rescue={rescues[meet.orgId]}/>)}
+                                        pup={pups[meet.pupId]} openModal={openModal} deleteMeet={deleteMeet} rescue={rescues[meet.orgId]}/>)}
                                     </div>
                                 </ul>
                             </div>

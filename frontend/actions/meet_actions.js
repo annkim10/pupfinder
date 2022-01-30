@@ -27,3 +27,6 @@ export const fetchMeets = userId => dispatch => MeetApiUtil.fetchMeets(userId)
 
 export const deleteMeet = (userId, meetId) => dispatch => MeetApiUtil.deleteMeet(userId, meetId)
 .then(() => dispatch(removeMeet(meetId)))
+
+export const updateMeet = (userId, meetId, meet) => dispatch => MeetApiUtil.updateMeet(userId, meetId, meet)
+.then((meet) => dispatch(removeMeet(meet)))

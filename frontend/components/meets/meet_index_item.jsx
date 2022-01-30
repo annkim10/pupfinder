@@ -1,26 +1,27 @@
 import React from "react"
 import {FiTrash2, FiEdit } from "react-icons/fi"
+import { Link } from "react-router-dom"
 
 class MeetIndexItem extends React.Component {
 
     constructor(props) {
         super(props)
+        this.clicked = false
     }
 
-    // handleClick(type) {
-    //     if (type === 'delete') {
-    //         return (e) => {
-    //             e.preventDefault()
-    //             this.props.deleteMeet(this.props.meet.id)
-    //         }
-    //     } 
-    // }
+    expandForm() {
+        this.clicked=true
+        console.log(this.clicked)
+        // return (e) => {
+           return 
+        // }
+    }
 
     render() {
-        const {meet, pup, rescue, deleteMeet} = this.props
+        const {meet, pup, rescue, deleteMeet, openModal} = this.props
         if (!meet || !pup || !rescue) return null
         
-        console.log("inside item", this.props)
+        // console.log("inside item", this.props)
         
         return (
         <div className="meet-item-div">
@@ -34,9 +35,10 @@ class MeetIndexItem extends React.Component {
                    <p>{rescue.orgName}</p>
                 </div>
                 <div className="meet-item-buttons">
-                    <button className="edit-button">
+                    <Link className="edit-button" to={`/users/${meet.userId}/meets/${meet.id}`}><FiEdit /></Link>
+                    {/* <button className="edit-button" onClick={() => openModal('edit')}>
                         <FiEdit />
-                    </button>
+                    </button> */}
                      <button className="trash-button" onClick={() => deleteMeet(meet.userId, meet.id)}>
                         <FiTrash2 />
                     </button>
