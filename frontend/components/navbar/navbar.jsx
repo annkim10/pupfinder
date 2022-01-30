@@ -25,9 +25,7 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-right">
                     <div className="currentuser-name">
-                        <p> 
-                            {currentUser.firstName} {currentUser.lastName}  
-                        </p>
+                        <Link to={`/users/${currentUser.id}`} className="fav-icon"> {currentUser.firstName} {currentUser.lastName} </Link>
                     </div>
                     <div className="fav-icon-div">
                         <Link to={`/users/${currentUser.id}`} className="fav-icon"><FaHeart size={20}/> </Link>
