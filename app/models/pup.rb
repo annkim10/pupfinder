@@ -24,4 +24,9 @@ class Pup < ApplicationRecord
     
     has_many_attached :photos
 
+    has_many :meets, 
+    primary_key: :id,
+    foreign_key: :pup_id, 
+    class_name: :Meet
+
 end

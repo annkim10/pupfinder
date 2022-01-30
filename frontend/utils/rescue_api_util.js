@@ -5,9 +5,9 @@ export const fetchRescues = () => (
     })
 )
 
-export const fetchRescue = orgId => (
+export const fetchRescue = rescueId => (
     $.ajax({
-        url: `/api/rescueorgs/${orgId}`,
+        url: `/api/rescueorgs/${rescueId}`,
         method: 'GET'
     })
 )

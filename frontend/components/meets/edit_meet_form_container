@@ -1,0 +1,25 @@
+import { connect } from "react-redux";
+import EditMeetForm from "./edit_meet_form"
+import { fetchPups } from "../../actions/pup_actions";
+import { updateMeet, fetchMeets} from "../../actions/meet_actions"
+import { fetchRescues } from "../../actions/rescue_actions"
+import { openModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router-dom"
+
+
+export const mapState = (state, ownProps) => ({
+    pups: state.entities.pups,
+    rescues: state.entities.rescues,
+    userId: state.session.id,
+    meet: state.entities.meets[ownProps.match.params.meetId]
+})
+
+export const mapDispatch = dispatch => ({
+    fetchPups: () => dispatch(fetchPups()),
+    fetchRescues: () => dispatch(fetchRescues()),
+    processForm:(userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
+    openModal: () => dispatch(openModal('edit')),
+    fetchMeets: userId => dispatch(fetchMeets(userId)),
+})
+
+export default withRouter(connect(mapState, mapDispatch)(EditMeetForm))

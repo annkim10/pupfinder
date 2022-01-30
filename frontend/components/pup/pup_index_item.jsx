@@ -6,9 +6,11 @@ import PupShowContainer from "./pup_show_container";
 const PupIndexItem = (props) => {
     // console.log(props.pup)
     const {pup} = props
+    const rescueId = pup.orgId
+
     return (
         <div className="card-wrapper">
-            <Link to={`/pups/${pup.id}`}>
+            <Link to={`/pups/${rescueId}/${pup.id}`}>
                 <div className="card-body">
                     <img src={pup.photoUrls[0]} className="pup-card-img"/>
                     <div className="pup-card-text">
@@ -25,4 +27,4 @@ const PupIndexItem = (props) => {
 }
 
 
-export default withRouter(PupIndexItem)
+export default PupIndexItem

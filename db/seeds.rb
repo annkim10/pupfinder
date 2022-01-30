@@ -19,6 +19,7 @@ user1 = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.l
 user2 = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, zipcode: 11101, email: Faker::Internet.email, password: 'password') 
 user3 = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, zipcode: 11101, email: Faker::Internet.email, password: 'password') 
 user4 = User.create(first_name: 'Demo', last_name: 'User', zipcode: 11101, email: 'demouser@demo.com', password: 'password') 
+user4.photo.attach(io: open("https://pupfinder-dev.s3.amazonaws.com/demouser.jpg"), filename: "demouser.jpg")
 
 org1 = RescueOrg.create(org_name: 'Furever Homes', org_address: Faker::Address.full_address, org_email: 'fureverhomes@email.com', org_phone: '202-555-0166', org_website: 'www.fureverhomes.com', org_bio: 'We strive to find furever homes for all our pups' )
 org1.photo.attach(io: open("https://pupfinder-dev.s3.amazonaws.com/furever-logo.jpg"), filename: "furever-logo.jpg")

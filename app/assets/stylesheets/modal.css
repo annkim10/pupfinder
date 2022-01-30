@@ -5,7 +5,7 @@
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.445);
-  z-index: 10;
+  z-index: 100;
 }
 
 .modal-child {
@@ -93,13 +93,18 @@
   background-color: #260273;
 }
 
-input {
+select, input {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 90%;
   padding: 10px 0px 10px 10px;
   border: 1px solid rgb(160, 160, 160);
   border-radius: 5px;
   margin: 8px 0px;
   font-family: 'Poppins', sans-serif;
+  box-sizing: content-box;
 }
 
 .form-button {
@@ -160,4 +165,81 @@ input {
 
 .demo-login-div > button {
   width: 100%;
+}
+
+
+
+/* MEET CONFIRMATION PAGE */
+
+.edit-modal-wrapper {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-top: 40px solid #3f04bf;
+}
+
+
+.confirm-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.confirm-header {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.confirm-header > span {
+  font-weight: 600;
+  color: #3f04bf;
+  padding-right: 10px;
+} 
+
+.confirm-body {
+  width: 400px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.confirm-body > span {
+  font-weight: 600;
+  color: #260273;
+}
+
+.confirm-button {
+  width: 200px;
+  display: block;
+  border: 1px solid #260273;
+  padding: 10px;
+  margin-top: 40px;
+  color: #260273;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.confirm-button:hover {
+  width: 200px;
+  display: block;
+  background-color: #260273;
+  /* border: 1px solid #260273; */
+  padding: 10px;
+  margin-top: 40px;
+  color: white;
+}
+
+.confirm-icon {
+  font-size: 5rem;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import PupIndexItem from "./pup_index_item";
-import {withRouter} from "react-router-dom"
+import {withRouter, Link} from "react-router-dom"
 
 class PupIndex extends React.Component {
 

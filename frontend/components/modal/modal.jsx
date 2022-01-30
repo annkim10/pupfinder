@@ -3,9 +3,11 @@ import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import SignupFormContainer from "../session_form/signup_form_container"
 import LoginFormContainer from "../session_form/login_form_container"
-
+import ConfirmFormContainer from "../meets/confirm_form_container"
+import EditMeetFormContainer from "../meets/edit_meet_form_container";
 
 function Modal({modal, closeModal}) {
+
   if (!modal) {
     return null;
   }
@@ -17,6 +19,12 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'meet':
+      component = <ConfirmFormContainer />;
+      break;
+    // case 'edit':
+    //   component = <EditMeetFormContainer />;
+    //   break;
     default:
       return null;
   }
@@ -29,7 +37,7 @@ function Modal({modal, closeModal}) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     modal: state.modal
   };
@@ -37,7 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
