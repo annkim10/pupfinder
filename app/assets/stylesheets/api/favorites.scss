@@ -30,3 +30,41 @@
 .pup-show-fav-button:hover .favorite-icon {
     fill: #260273
 }
+
+.fav-index-container {
+    width: 100%;
+}
+
+.fav-index-header {
+    font-size: 35px;
+    margin-top: 25px;
+    padding: 25px 0 30px 45px;
+}
+
+.fav-card-div {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 200px));
+    gap: 2rem;
+}
+
+.fav-card-container {
+    overflow: scroll;
+    height: 100%;
+    padding-left: 40px;
+}
+
+.num-fav-pups {
+    color: #260273;
+}
+
+.num-fav-pups::before {
+    content: "(";
+    font-weight: 300;
+}
+
+.num-fav-pups::after {
+    content: ")";
+    font-weight: 300;
+}

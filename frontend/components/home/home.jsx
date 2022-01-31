@@ -24,9 +24,13 @@ class Home extends React.Component {
                     </div>
                     <img className="hero-img" src={img} />
                 </div>
-                <div className="articles-home-div">
-                    <Link to="/pups/index">Pups Index</Link>
+                <div className="pup-picks-home-div">
+                    <Link to="/pups/index">Find Adoptable Pups</Link>
+                    
                 </div>    
+                 <div className="articles-home-div">
+                    <Link to="/pups/index">Pups Index</Link>
+                </div>   
             </div>
         </div>
         )}

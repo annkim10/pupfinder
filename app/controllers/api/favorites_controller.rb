@@ -1,9 +1,14 @@
 class Api::FavoritesController < ApplicationController
 
+    def index 
+        if params[:user_id]
+            @favorites = Favorite.where(user_id: params[:user_id] )
+        end
+        render :index
+    end
+
     def create 
         @favorite = Favorite.new(fav_params)
-        # @favorite.user_id = current_user.id
-        # @favorite.pup_id = Pup.find(params[:pup_id])
         if @favorite.save
             render :show 
         else 

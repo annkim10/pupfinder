@@ -79,11 +79,12 @@
 
 .pup-show-div {
     width: 100%;
-    // background-color: rosybrown;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 4px solid #260273;
 }
 
 .pup-show-main-wrapper {

@@ -1,6 +1,10 @@
+ html {
+     height: auto;
+ }
+ 
  body {
-     width: 100%;
-     height: 100%;
+     min-width: 100vw;
+     min-height: 100vh;
      display: flex;
      flex-direction: center;
      justify-content: center;
@@ -10,27 +14,27 @@
      /* background-color: cornflowerblue; */
      position: relative;
      width: 90%;
-     height: 100%;
+     min-height: 100vh;
      display: flex;
      justify-content: center;
  }
 
  .app {
-     /* background-color: turquoise; */
+     background-color: rgb(233, 233, 233);
      display: flex;
      flex-direction: column;
      /* justify-content: center; */
      /* align-items: center; */
      /* padding-top: 30px; */
-     min-width: 100%;
+     min-width: 100vw;
      /* max-width: 1920px; */
      /* min-width: auto; */
-     height: 100%;
+     min-height: 100vh;
      color: rgb(65, 65, 65);
  }
 
  .top-navbar-wrapper {
-     /* background-color: rgb(114, 114, 170); */
+     background-color: white;
      /* border-bottom: 1px solid rgb(190, 190, 190); */
      /* box-shadow: rgba(0, 0, 0, 0.11) 2.4px 2.4px 3.2px; */
      padding-top: 12px;
@@ -133,7 +137,7 @@
 }
 
 .home-wrapper {
-    /* background-color: aquamarine; */
+    background-color: white;
     position: relative;
     display: flex;
     justify-content: center;
@@ -143,7 +147,7 @@
 
 .main-div {
     /* background-color: cadetblue; */
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -167,6 +171,12 @@
     object-fit: cover;
     border-radius: 20px;
    /* max-width: 100%; */
+}
+
+.pup-picks-home-div { 
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+    height: 500px;
 }
 
 .articles-home-div { 

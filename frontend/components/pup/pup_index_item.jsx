@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 // import PupShowContainer from "./pup_show_container";
-import FavoritePost from "../favorites/favorite_post"
+import FavoritePost from "../favorites/favorites_post"
 
 const PupIndexItem = (props) => {
     // console.log(props.pup)
