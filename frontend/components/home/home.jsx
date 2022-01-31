@@ -15,8 +15,17 @@ class Home extends React.Component {
     componentDidMount() {
         this.props.fetchPups()  
         this.props.fetchRescues()
-        this.props.fetchFavorites(this.props.currentUser.id)
+
+        if (this.props.currentUser) {
+             this.props.fetchFavorites(this.props.currentUser.id)
+        }
     }
+
+    // componentDidUpdate() {
+    //      if (this.props.currentUser) {
+    //          this.props.fetchFavorites(this.props.currentUser.id)
+    //     }
+    // }
 
     render() {
 
