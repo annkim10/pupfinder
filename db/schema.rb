@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_174541) do
+ActiveRecord::Schema.define(version: 2022_01_31_184056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_174541) do
     t.integer "pup_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "pup_id"], name: "index_favorites_on_user_id_and_pup_id", unique: true
   end
 
   create_table "meets", force: :cascade do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_174541) do
     t.string "end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pup_id"], name: "index_meets_on_pup_id", unique: true
   end
 
   create_table "pups", force: :cascade do |t|

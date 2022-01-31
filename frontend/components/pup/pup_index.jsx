@@ -15,11 +15,11 @@ class PupIndex extends React.Component {
     }
 
     render() {
-        const { pups, currentUser, postFavorite } = this.props
+        const { pups, currentUser, postFavorite, deleteFavorite } = this.props
         // console.log("inside index", pups)
         return (
             <div className="card-div">
-                {pups.map(pup => <PupIndexItem key={pup.id} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                {pups.map(pup => <PupIndexItem key={pup.id} location={'index'} deleteFavorite={deleteFavorite} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
             </div>
         ) 
     }

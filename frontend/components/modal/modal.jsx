@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import SignupFormContainer from "../session_form/signup_form_container"
 import LoginFormContainer from "../session_form/login_form_container"
 import ConfirmFormContainer from "../meets/confirm_form_container"
-import EditMeetFormContainer from "../meets/edit_meet_form_container";
+import EditConfirm from "../meets/edit_confirm";
 
 function Modal({modal, closeModal}) {
 
@@ -22,19 +22,32 @@ function Modal({modal, closeModal}) {
     case 'meet':
       component = <ConfirmFormContainer />;
       break;
-    // case 'edit':
-    //   component = <EditMeetFormContainer />;
-    //   break;
+    case 'edit':
+      component = <EditConfirm />;
+      break;
     default:
       return null;
   }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+
+  if (modal === 'edit') {
+    return (
+    <div className="modal-background" >
+      <div className="modal-child">
         { component }
       </div>
     </div>
-  );
+    );
+  } else {
+    return (
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            { component }
+          </div>
+        </div>
+      );
+  }
+
+  
 }
 
 const mapStateToProps = (state) => {

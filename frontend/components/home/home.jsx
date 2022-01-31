@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../../assets/img1.jpg"
 import img2 from "../../assets/img2.jpg"
+import meet from "../../assets/meet.jpg"
 import { Link } from "react-router-dom"
 import PupPicks from "../pup/pup_picks";
 
@@ -53,14 +54,19 @@ class Home extends React.Component {
                     </div>
                 </div>    
                 <div className="meet-greet-home-div">
-                    <div className="meet-greet-text-div">
-                       <h1>Are you a match? </h1>
-                       <p>Schedule a <span>Meet &amp; Greet</span> with a pup</p>
-                    </div>
+                    <div className="meet-greet-copy-div">
+                        {/* <img className="meet-greet-form-img" src={meet} /> */}
+                        <div className="meet-greet-text-div">
+                            <h1>Are you a match? </h1>
+                            <p>Schedule a Meet &amp; Greet with a pup</p>
+                        </div>
+                    </div>       
                     <img className="meet-greet-img" src={img2} />
                 </div>
                  <div className="articles-home-div">
-                    <Link to="/pups/index">Pups Index</Link>
+                    <div className="articles-home-wrapper">
+                        
+                    </div>
                 </div>   
             </div>
         </div>

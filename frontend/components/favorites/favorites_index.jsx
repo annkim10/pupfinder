@@ -29,7 +29,7 @@ class FavoritesIndex extends React.Component {
                                 <h1 className='fav-index-header'>My Favorite Pups <span className="num-fav-pups">{favPups.length}</span> </h1>
                                 <ul className="fav-card-container">
                                     <div className='fav-card-div'>
-                                        {favPups.map(pup => <PupIndexItem postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                                        {favPups.map((pup, idx) => <PupIndexItem key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
                                     </div>
                                 </ul>
                             </div>

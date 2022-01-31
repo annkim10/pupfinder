@@ -15,7 +15,8 @@
 #
 class Meet < ApplicationRecord
 
-    validates :pup_id, :user_id, :org_id, :date, :meeting_type, :start_time, :end_time, presence: true 
+    validates :user_id, :org_id, :date, :meeting_type, :start_time, :end_time, presence: true 
+    validates :pup_id, presence: true, uniqueness: true
 
     belongs_to :user,
     primary_key: :id,
@@ -26,6 +27,8 @@ class Meet < ApplicationRecord
     foreign_key: :pup_id, 
     class_name: :Pup
 
-    
+    def validate!
+        
+    end
 
 end
