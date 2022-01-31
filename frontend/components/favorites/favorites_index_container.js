@@ -5,7 +5,7 @@ import {fetchFavorites, deleteFavorite, postFavorite } from "../../actions/fav_a
 import {fetchPups } from "../../actions/pup_actions"
 
 const mapState = state => ({
-    favorites: Object.values(state.entities.favorites),
+    favorites: state.entities.favorites,
     currentUser: state.entities.users[state.session.id],
     pups: state.entities.pups
 })

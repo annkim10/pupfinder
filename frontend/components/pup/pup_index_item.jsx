@@ -12,7 +12,7 @@ class PupIndexItem extends React.Component {
 
 
     render() {
-        console.log("inside pup item", this.props)
+        // console.log("inside pup item", this.props)
         const {pup, currentUser, postFavorite, deleteFavorite, favorites} = this.props
         if (!pup || !currentUser || !postFavorite ) return null
     
@@ -20,7 +20,6 @@ class PupIndexItem extends React.Component {
         
         return (
             <div className="card-wrapper">
-                {/* {this.handleFavorites()} */}
                 <FavoritePost pup={pup} currentUser={currentUser} favorites={favorites} deleteFavorite={deleteFavorite} postFavorite={postFavorite}/>
                 <Link to={`/pups/${rescueId}/${pup.id}`}>
                     <div className="card-body">
