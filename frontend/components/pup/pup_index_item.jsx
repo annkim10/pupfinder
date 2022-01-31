@@ -6,8 +6,10 @@ import FavoritePost from "../favorites/favorites_post"
 const PupIndexItem = (props) => {
     // console.log(props.pup)
     const {pup, currentUser, postFavorite} = props
+    if (!pup || !currentUser || !postFavorite) return null
+  
     const rescueId = pup.orgId
-
+    
     return (
         <div className="card-wrapper">
             <FavoritePost pup={pup} currentUser={currentUser} postFavorite={postFavorite}/>

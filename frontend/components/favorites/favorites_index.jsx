@@ -9,7 +9,7 @@ class FavoritesIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
 
         const {favorites, pups, currentUser, postFavorite} = this.props
 
@@ -19,7 +19,7 @@ class FavoritesIndex extends React.Component {
             var favPups = favorites.map(fav => pups[fav.pupId])
         }
         
-        console.log(favPups)
+        (favPups)
 
         return (
             <div className="user-show-outer-div">

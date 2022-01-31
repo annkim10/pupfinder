@@ -9,7 +9,7 @@ const FavoritePost = ({pup, currentUser, postFavorite}) => {
         user_id: currentUser.id
     })
 
-    console.log("inside favorite", favorite)
+    // console.log("inside favorite", favorite)
     return (
         <div className="pup-show-fav-button-div">
             <button className="pup-show-fav-button" onClick={() => postFavorite(favorite)}><FiHeart className="favorite-icon"/></button>

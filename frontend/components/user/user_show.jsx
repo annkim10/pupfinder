@@ -6,7 +6,7 @@ import { FaUserCircle } from "react-icons/fa"
 class UserShow extends React.Component {
 
     render() {
-        console.log("inside user", this.props)
+        // console.log("inside user", this.props)
         const {currentUser} = this.props
         return (
             <div className="user-show-outer-div">
