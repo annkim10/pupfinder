@@ -29,4 +29,9 @@ class Pup < ApplicationRecord
     foreign_key: :pup_id, 
     class_name: :Meet
 
+    has_many :favorites, 
+    primary_key: :id,
+    foreign_key: :pup_id, 
+    class_name: :Favorite
+
 end

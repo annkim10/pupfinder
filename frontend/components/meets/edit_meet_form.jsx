@@ -11,6 +11,9 @@ class EditMeetForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.dateMin = null
         this.dateMax = null
+        this.state = this.props.meet
+        this.handleCancel = this.handleCancel.bind(this)
+        console.log("edit construct", this.props)
     }
 
     startTimes() {
@@ -39,7 +42,6 @@ class EditMeetForm extends React.Component {
             }
     }
 
-
     setDateRange(){
         const date = new Date()
         let z = n => ('0' + n).slice(-2)
@@ -57,9 +59,14 @@ class EditMeetForm extends React.Component {
         // console.log("mount", this.props)
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
+    // processForm:(userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(this.props.openModal)
+        this.props.processForm(this.props.userId, this.props.meet.id, this.state).then(this.props.openModal)
     }
 
     handleChange(field) {
@@ -70,8 +77,21 @@ class EditMeetForm extends React.Component {
         }
     }
 
+    handleCancel(e) {
+        e.preventDefault()
+        this.props.deleteMeet(this.props.userId, this.props.meet.id).then(this.props.openModal('edit'))
+    }
+
+    renderErrors() {
+        return (
+           <ul className="meet-error-list">
+                {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+           </ul>
+        )
+    }
+
     render() {
-        console.log("inside edit", this.props)
+        // console.log("inside edit", this.props)
         const {meet} = this.props
         
         if (!meet) {
@@ -81,12 +101,13 @@ class EditMeetForm extends React.Component {
             this.pup = this.props.pups[meet.pupId]
             this.rescue = this.props.rescues[meet.orgId]
         }
-    console.log("inside edit", this.pup)
+
         return (
             <div className="user-show-outer-div">
                 <div className="user-show-inner-div">
                     <div className="user-profile">
                         <div className="edit-meet-form-div">
+                            {this.renderErrors()}
                             <div className="header-div">
                                 <div className="pup-thumbnail-meet-div">
                                     <img className="pup-thumbnail-meet" src={this.pup.photoUrls[0]} />
@@ -114,7 +135,7 @@ class EditMeetForm extends React.Component {
                                             <div className="start-time">
                                                 <label> Start Time </label>
                                                 <select className="time-select" onChange={this.handleChange('start_time')}>
-                                                {this.startTimes.map((time, idx) => <option key={idx}>{time}</option>)}
+                                                {this.startTimes.map((time, idx) => <option key={idx}>{time} </option>)}
                                                 </select>
                                             </div>
                                             <div className="end-time">
@@ -129,18 +150,21 @@ class EditMeetForm extends React.Component {
                                             <label> Select Meeting Type </label>
                                             <div className="meeting-type-div">
                                             <label className="container">Virtual
-                                                    <input type="radio" value="virtual" name="type" onChange={this.handleChange('meeting_type')} defaultChecked="checked"/>
+                                                    <input type="radio" value="virtual" name="type" onChange={this.handleChange('meeting_type')} defaultChecked={ meet.meetingType === 'virtual' ? "checked" : "" }/>
                                                     <span className="checkmark"></span>
                                                 </label>
                                                 <label className="container">In-person
-                                                    <input type="radio" value="in-person" name="type" onChange={this.handleChange('meeting_type')}/>
+                                                    <input type="radio" value="in-person" name="type" onChange={this.handleChange('meeting_type')} defaultChecked={ meet.meetingType === 'in-person' ? "checked" : "" }/>
                                                     <span className="checkmark"></span>
                                                 </label>
                                             </div>
-                                        </div>    
-                                        <button className="meet-form-submit-button">Save Changes</button>   
-                                        <br/>    
-                                        <button className="meet-form-submit-button">Cancel Request</button>                         
+                                        </div>   
+                                        <div className="edit-form-buttons">
+                                            <button className="edit-form-submit-button">Save Changes</button>   
+                                            <br/>    
+                                            <button className="edit-form-submit-button" onClick={this.handleCancel}>Cancel Request</button>   
+                                        </div> 
+                                                            
                                     </form>
                                 </div>
                         </div>   

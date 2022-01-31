@@ -29,6 +29,10 @@ class Meet extends React.Component {
         // console.log("mount", this.props)
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
     setDateRange(){
         const date = new Date()
         let z = n => ('0' + n).slice(-2)
@@ -77,6 +81,15 @@ class Meet extends React.Component {
         }
     }
 
+
+    renderErrors() {
+        return (
+           <ul className="meet-error-list">
+                {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+           </ul>
+        )
+    }
+
     render() {
         const { pup, rescue } = this.props
         console.log("inside meet", this.state)
@@ -89,11 +102,12 @@ class Meet extends React.Component {
                             <img className="pup-thumbnail-meet" src={pup.photoUrls[0]} />
                         </div>
                         <div className="meet-header"> 
-                            <h1> Meet &amp; Greet Request <br/> for <span> {pup.pupName}</span>
+                            <h1> Meet &amp; Greet Request <br/> for <span className="meet-header-span"> {pup.pupName}</span>
                             </h1>
                         </div>
                     </div>
                         <div className="form-div">
+                            {this.renderErrors()}
                             <form className="meet-form" onSubmit={this.handleSubmit}>
                                 <div>
                                     <label>Pup Name</label>

@@ -11,7 +11,7 @@ class MeetIndexItem extends React.Component {
 
     expandForm() {
         this.clicked=true
-        console.log(this.clicked)
+        // console.log(this.clicked)
         // return (e) => {
            return 
         // }

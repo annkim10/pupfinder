@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import FormConfirm from "./confirm_form";
+import MeetFormConfirm from "./meet_confirm_form";
 import { closeModal } from "../../actions/modal_actions";
 import { clearErrors } from "../../actions/session_actions";
 import { fetchPups } from "../../actions/pup_actions"
@@ -19,4 +19,4 @@ const mapDispatch = dispatch => ({
     fetchRescues: () => dispatch(fetchRescues())
 })
 
-export default withRouter(connect(mapState, mapDispatch)(FormConfirm))
+export default withRouter(connect(mapState, mapDispatch)(MeetFormConfirm))

@@ -21,9 +21,6 @@ class MeetsIndex extends React.Component {
 
         return (
                 <div className="user-show-outer-div">
-                    <div className="gray-background">
-                        <p>&nbsp;</p>
-                    </div>
                     <div className="user-show-inner-div">
                         <div className="user-profile">
                             <div className="meet-container">

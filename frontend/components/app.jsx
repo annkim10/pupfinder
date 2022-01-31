@@ -6,9 +6,9 @@ import PupIndexContainer from "./pup/pup_index_container"
 import PupShowContainer from "./pup/pup_show_container"
 import MeetFormContainer from "./meets/meet_form_container"
 import EditMeetsFormContainer from "./meets/edit_meet_form_container"
-import ConfirmFormContainer from "./meets/confirm_form_container"
+import FavoritesIndexContainer from "./favorites/favorites_index_container"
 import MeetsIndexContainer from "./meets/meets_index_container"
-import { Route, Switch, BrowserRouter } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import AuthRoute from "../utils/route_util"
 import Modal from "./modal/modal"
 import Footer from "./home/footer"
@@ -24,12 +24,13 @@ const App = () => (
             <Route path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
             <Route path="/users/:userId/meets/:meetId" component={EditMeetsFormContainer} />
             <Route path="/users/:userId/meets" component={MeetsIndexContainer} />
+            <Route path="/users/:userId/favorites" component={FavoritesIndexContainer}/>
             <Route path="/users/:userId" component={UserShowContainer} />
             <Route path="/pups/:rescueId/:pupId" component={PupShowContainer} />
             <Route path="/pups/index" component={PupIndexContainer} />
             <Route exact path="/" component={HomeContainer}/>
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
     </div>
 );
 
