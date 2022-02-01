@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_31_184056) do
+ActiveRecord::Schema.define(version: 2022_01_31_235224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 2022_01_31_184056) do
     t.index ["pup_id"], name: "index_meets_on_pup_id", unique: true
   end
 
+  create_table "preferences", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "age_pref", null: false
+    t.string "size_pref", null: false
+    t.string "gender_pref", null: false
+    t.string "activity_pref", null: false
+    t.string "special_needs_pref", null: false
+    t.string "house_trained_pref", null: false
+    t.string "good_with_dogs_pref", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_preferences_on_user_id", unique: true
+  end
+
   create_table "pups", force: :cascade do |t|
     t.integer "org_id", null: false
     t.string "pup_name", null: false
@@ -67,6 +81,10 @@ ActiveRecord::Schema.define(version: 2022_01_31_184056) do
     t.text "pup_bio", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "house_trained"
+    t.string "special_needs"
+    t.string "activity_level"
+    t.string "good_with_other_dogs"
   end
 
   create_table "rescue_orgs", force: :cascade do |t|

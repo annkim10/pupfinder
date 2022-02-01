@@ -9,7 +9,6 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props)
-    
     }
 
     componentDidMount() {
@@ -21,29 +20,23 @@ class Home extends React.Component {
         }
     }
 
-    // componentDidUpdate() {
-    //      if (this.props.currentUser) {
-    //          this.props.fetchFavorites(this.props.currentUser.id)
-    //     }
-    // }
-
     render() {
 
         const {pups, postFavorite, currentUser} = this.props
 
-        const keys = Object.keys(pups)
-        const random = []
+        // const keys = Object.keys(pups)
+        // const random = []
 
-        for (let i = 0; i < 5; i++) {
-            let randomNum = Math.floor(Math.random() * 25) + 1
-            if (!random.includes(randomNum)) random.push(randomNum)
-        }
+        // for (let i = 0; i < 5; i++) {
+        //     let randomNum = Math.floor(Math.random() * 25) + 1
+        //     if (!random.includes(randomNum)) random.push(randomNum)
+        // }
 
-        var pupPicks = []
+        // // var pupPicks = []
 
-        random.forEach(r => pupPicks.push(pups[r]))
+        // random.forEach(r => this.pupPicks.push(pups[r]))
 
-        console.log("home", pupPicks)
+        console.log("home", this.randomNums)
 
 
         return (
@@ -60,12 +53,11 @@ class Home extends React.Component {
                         <Link className="pup-picks-link" to="/pups/index">Find Adoptable Pups</Link>
                     </div>
                     <div className='pup-picks-div'>
-                         {pupPicks.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                         {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
                     </div>
                 </div>    
                 <div className="meet-greet-home-div">
                     <div className="meet-greet-copy-div">
-                        {/* <img className="meet-greet-form-img" src={meet} /> */}
                         <div className="meet-greet-text-div">
                             <h1>Are you a match? </h1>
                             <p>Schedule a Meet &amp; Greet with a pup</p>

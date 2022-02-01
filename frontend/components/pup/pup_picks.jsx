@@ -4,9 +4,9 @@ import { Link, withRouter } from "react-router-dom";
 import FavoritePost from "../favorites/favorites_post"
 
 const PupPicks = (props) => {
-    // console.log(props.pup)
+    console.log("inside pupPicks", props)
     const {pup, currentUser, postFavorite} = props
-    if (!pup || !postFavorite) return null
+    if (!pup ) return null
   
     const rescueId = pup.orgId
     
