@@ -24,27 +24,13 @@ class Home extends React.Component {
 
         const {pups, postFavorite, currentUser} = this.props
 
-        // const keys = Object.keys(pups)
-        // const random = []
-
-        // for (let i = 0; i < 5; i++) {
-        //     let randomNum = Math.floor(Math.random() * 25) + 1
-        //     if (!random.includes(randomNum)) random.push(randomNum)
-        // }
-
-        // // var pupPicks = []
-
-        // random.forEach(r => this.pupPicks.push(pups[r]))
-
-        console.log("home", this.randomNums)
-
-
         return (
         <div className="home-wrapper">
             <div className="main-div">
                 <div className="inner-home-div">
                     <div className="pup-home-div">
-                       <h1>Find your perfect pup</h1>
+                        <Link to={`/users/${currentUser.id}/preferences`}>Find your perfect pup</Link>
+                       {/* <h1>Find your perfect pup</h1> */}
                     </div>
                     <img className="hero-img" src={img} />
                 </div>

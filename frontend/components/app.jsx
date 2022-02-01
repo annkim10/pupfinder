@@ -8,6 +8,7 @@ import MeetFormContainer from "./meets/meet_form_container"
 import EditMeetsFormContainer from "./meets/edit_meet_form_container"
 import FavoritesIndexContainer from "./favorites/favorites_index_container"
 import MeetsIndexContainer from "./meets/meets_index_container"
+import CreatePreferenceFormContainer from "./preferences/create_preference_form_container"
 import { Route, Switch } from "react-router-dom"
 import AuthRoute from "../utils/route_util"
 import Modal from "./modal/modal"
@@ -23,6 +24,7 @@ const App = () => (
         <Switch>
             <Route path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
             <Route path="/users/:userId/meets/:meetId" component={EditMeetsFormContainer} />
+            <Route path="/users/:userId/preferences" component={CreatePreferenceFormContainer} />
             <Route path="/users/:userId/meets" component={MeetsIndexContainer} />
             <Route path="/users/:userId/favorites" component={FavoritesIndexContainer}/>
             <Route path="/users/:userId" component={UserShowContainer} />
