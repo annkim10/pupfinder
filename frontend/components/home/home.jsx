@@ -29,7 +29,7 @@ class Home extends React.Component {
             <div className="main-div">
                 <div className="inner-home-div">
                     <div className="pup-home-div">
-                        <Link to={`/users/${currentUser.id}/preferences`}>Find your perfect pup</Link>
+                        <Link to={`/users/preferences`}>Find your perfect pup</Link>
                        {/* <h1>Find your perfect pup</h1> */}
                     </div>
                     <img className="hero-img" src={img} />

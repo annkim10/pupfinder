@@ -95,6 +95,7 @@
     min-width: 50%;
     max-width: auto;
     height: 100%;
+    color:rgb(65, 65, 65);
     /* display: inline-block; */
     display: flex;
     align-items: center;
@@ -110,11 +111,12 @@
     align-items: center;
     justify-content: center;
     border-left: 1px solid rgb(190, 190, 190);
+    fill:rgb(65, 65, 65)
 }
 
-.fav-icon:hover {
+/* .fav-icon:hover {
    color: #260273;
-}
+} */
 
 .nav-signup, .nav-login, .nav-logout { 
     /* background-color: yellow; */

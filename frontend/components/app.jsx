@@ -24,7 +24,7 @@ const App = () => (
         <Switch>
             <Route path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
             <Route path="/users/:userId/meets/:meetId" component={EditMeetsFormContainer} />
-            <Route path="/users/:userId/preferences" component={CreatePreferenceFormContainer} />
+            <Route path="/users/preferences" component={CreatePreferenceFormContainer} />
             <Route path="/users/:userId/meets" component={MeetsIndexContainer} />
             <Route path="/users/:userId/favorites" component={FavoritesIndexContainer}/>
             <Route path="/users/:userId" component={UserShowContainer} />
