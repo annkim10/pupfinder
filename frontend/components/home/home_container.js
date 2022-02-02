@@ -7,8 +7,10 @@ import { postFavorite, fetchFavorites } from "../../actions/fav_actions";
 const mapState = state => ({
     currentUser: state.entities.users[state.session.id],
     pups: state.entities.pups,
+    pupsArr: Object.values(state.entities.pups).slice(0, 5),
     rescues: state.entities.rescues,
-    favorites: state.entities.favorites
+    favorites: state.entities.favorites,
+
 })
 
 const mapDispatch = dispatch => ({

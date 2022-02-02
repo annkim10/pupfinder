@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :favorites, only: [:index]
     end
 
+    resources :preferences, only: [:create, :update, :show, :index]
+
     resources :favorites, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
 
