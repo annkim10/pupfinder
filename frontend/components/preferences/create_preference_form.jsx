@@ -4,7 +4,6 @@ import { IoIosArrowDown } from "react-icons/io"
 import {GiDogBowl, GiJumpingDog, GiHeartPlus, GiDogHouse, GiSittingDog} from "react-icons/gi"
 import {FaDog} from "react-icons/fa"
 import { Redirect} from "react-router-dom"
-import MatchesContainer from "./matches_container"
 
 
 
