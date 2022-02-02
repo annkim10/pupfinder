@@ -11,6 +11,15 @@ export const mapState = (state, ownProps) => ({
     rescue: state.entities.rescues[ownProps.match.params.rescueId],
     userId: state.session.id,
     errors: state.errors.meets
+    // meet: {
+    //         pup_id: parseInt(this.props.match.params.pupId),
+    //         user_id: parseInt(this.props.match.params.userId),
+    //         org_id: parseInt(this.props.match.params.rescueId),
+    //         date: "",
+    //         meeting_type: "",
+    //         start_time: "",
+    //         end_time: ""
+    //     }
 })
 
 export const mapDispatch = dispatch => ({
