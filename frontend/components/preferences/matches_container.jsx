@@ -6,12 +6,11 @@ import { fetchAllPreferences } from "../../actions/preference_actions";
 
 const mapState = state => ({
     pups: state.entities.pups, 
-    preferences: Object.values(state.entities.preferences)[0]
+    preferences: state.entities.preferences
 })
 
 const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
-    fetchAllPreferences: () => dispatch(fetchAllPreferences())
 })
 
 export default withRouter(connect(mapState, mapDispatch)(Matches))
