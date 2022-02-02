@@ -5,7 +5,7 @@ import { fetchPups } from "../../actions/pup_actions";
 import { fetchAllPreferences } from "../../actions/preference_actions";
 
 const mapState = state => ({
-    pups: state.entities.pups, 
+    pups: Object.values(state.entities.pups),
     preferences: state.entities.preferences
 })
 

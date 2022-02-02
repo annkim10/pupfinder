@@ -18,7 +18,7 @@
     max-width: 1220px;
     min-height: 100%;
     border-radius: 20px;
-    padding-left: 200px
+    padding-left: 150px
 }
 
 .preference-form-header {
@@ -194,4 +194,52 @@
     color: #4BFAE3;
     font-weight: 200;
     font-size: 22px
+}
+
+.pup-matches-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 1px solid white
+}
+
+.pup-matches-header-div {
+    margin-top: 80px
+}
+
+.pup-matches-header {
+    font-size: 30px;
+    color: #4BFAE3;
+    padding: 25px 0;
+    border-top: 1px solid white;
+}
+
+.pup-matches-div {
+    display: flex;
+    gap: 3rem;
+
+}
+
+.pup-matches-body {
+    height: 300px;
+    padding-top: 40px;
+}
+
+.pup-matches-text {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.pups-index-button {
+  border: 1px solid white;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+  padding: 12px 60px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 300px;
 }
