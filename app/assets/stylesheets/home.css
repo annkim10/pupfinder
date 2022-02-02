@@ -41,11 +41,14 @@
      padding-bottom: 12px;
      min-width: 90%;
      max-width: 100%;
-     height: 70px;
+     height: 50px;
      position: sticky;
+     top: 0;
      display: flex;
      justify-content: center;
      align-items: center;
+     z-index: 100;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
  }
 
  .top-navbar {
@@ -54,9 +57,9 @@
      width: 90%;
      height: 100%;
      display: flex;
-     position: sticky;
-     top: 0;
-     left: 0;
+     /* position: sticky;
+     top: 0; */
+     /* left: 0; */
      align-items: center;
      justify-content: space-between;
      color: rgb(65, 65, 65);
@@ -160,6 +163,7 @@
     /* background-color: blueviolet; */
     height: 600px;
     position: relative;
+    padding-top: 20px
 }
 
 .pup-home-div {

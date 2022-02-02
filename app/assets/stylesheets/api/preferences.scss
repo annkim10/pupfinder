@@ -17,7 +17,8 @@
     min-width: 1024px;
     max-width: 1220px;
     min-height: 100%;
-    border-radius: 20px
+    border-radius: 20px;
+    padding-left: 200px
 }
 
 .preference-form-header {
@@ -47,6 +48,7 @@
     display: flex;
     width: 400px;
     flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .pref-question-div {
@@ -121,7 +123,7 @@
 }
 
 .pref-dropdown-options:hover {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(236, 236, 236);
     cursor: pointer;
     font-weight: 600;
 }
@@ -133,5 +135,64 @@
   padding: 12px 20px;
   border-radius: 20px;
   cursor: pointer;
-  width: 94%;
+  width: 300px;
+}
+
+
+//MATCHES PAGE
+
+.matches-header {
+    height: 100px;
+    font-size: 50px;
+    font-weight: 200;
+    color: #4BFAE3;
+    padding-top: 50px;
+}
+
+.matches-pref-div {
+    font-size: 20px;
+    font-weight: 200;
+    width: 800px;
+}
+
+.matches-pref-div h1 {
+    padding-bottom: 50px;
+}
+
+.matches-pref-list {
+    padding-top: 10px;
+    display: flex;
+    height: 300px
+}
+
+.pref-container {
+    display: flex;
+    min-width: 600px;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.pref-div {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.pref-div h1 {
+    font-size: 2rem
+}
+
+.pref-div h2 {
+    font-weight: 600;
+    padding-bottom: 20px;
+    font-size: 16px;
+    padding: 8px 0 20px 0;
+}
+
+.pref-div p {
+    color: #4BFAE3;
+    font-weight: 200;
+    font-size: 22px
 }

@@ -16,7 +16,7 @@
 #
 class Preference < ApplicationRecord
 
-    validates :user_id, presence: true, uniqueness: true 
+    validates :user_id, presence: true
     validates :age_pref, presence: true, inclusion: { in: %w(No\ Preference Puppy Adult Senior)}
     validates :size_pref, presence: true, inclusion: { in: %w(No\ Preference Small Medium Large)}
     validates :gender_pref, presence: true, inclusion: { in: %w(No\ Preference Female Male) }

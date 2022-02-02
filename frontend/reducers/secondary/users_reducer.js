@@ -6,11 +6,7 @@ const UsersReducer = (state={}, action) => {
     Object.freeze(state)
     switch(action.type) {
         case RECEIVE_CURRENT_USER: 
-            return Object.assign({}, state, { [action.user.id]: action.user});
-        case RECEIVE_PREFERENCES:
-            const nextState = Object.assign({}, state)
-            nextState[action.user.id].preferences = action.preferences;
-            return nextState
+            return Object.assign({}, state, { [action.user.id]: action.user});   
         default: 
             return state
     }

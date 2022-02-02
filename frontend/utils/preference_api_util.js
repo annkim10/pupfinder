@@ -14,6 +14,11 @@ export const fetchPreferences = preferenceId => (
     })
 )
 
-
+export const fetchAllPreferences = () => (
+    $.ajax({
+        url: `/api/preferences`,
+        method: 'GET',
+    })
+)
 
 

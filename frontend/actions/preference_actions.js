@@ -9,8 +9,11 @@ export const receivePreferences = preferences => ({
     preferences
 })
 
-export const fetchPreferences = preferenceId => PreferenceApiUtil.fetchPreferences(preferenceId)
+export const fetchPreferences = preferenceId => dispatch => PreferenceApiUtil.fetchPreferences(preferenceId)
 .then(preferences => dispatch(receivePreferences(preferences)))
 
-export const postPreferences = preferences => PreferenceApiUtil.postPreferences(preferences)
+export const postPreferences = preferences => dispatch => PreferenceApiUtil.postPreferences(preferences)
+.then(preferences => dispatch(receivePreferences(preferences)))
+
+export const fetchAllPreferences = () => dispatch => PreferenceApiUtil.fetchAllPreferences()
 .then(preferences => dispatch(receivePreferences(preferences)))

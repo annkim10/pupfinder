@@ -12,7 +12,8 @@ const EntitiesReducer = combineReducers({
     pups: PupsReducer,
     rescues: RescuesReducer,
     meets: MeetReducers, 
-    favorites: FavoriteReducer
+    favorites: FavoriteReducer,
+    preferences: PreferencesReducer
 })
 
 
