@@ -28,7 +28,7 @@ class Matches extends React.Component {
                         <h1>Your Top Pup Picks!</h1>
                     </div>
                     <div className="matches-pref-div">
-                        <h1>Based on your preferences:</h1>
+                        <h1 className="matches-header-2">Based on your preferences:</h1>
                         <div className="matches-pref-list">
                             <ul className="pref-container">
                                 <li className="pref-div">

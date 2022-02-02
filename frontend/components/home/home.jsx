@@ -4,6 +4,8 @@ import img2 from "../../assets/img2.jpg"
 import meet from "../../assets/meet.jpg"
 import { Link } from "react-router-dom"
 import PupPicks from "../pup/pup_picks";
+import Articles from "./articles";
+
 
 class Home extends React.Component {
 
@@ -53,7 +55,8 @@ class Home extends React.Component {
                 </div>
                  <div className="articles-home-div">
                     <div className="articles-home-wrapper">
-                        
+                        <h1>Caring for Your Pup</h1>
+                        <Articles />
                     </div>
                 </div>   
             </div>
