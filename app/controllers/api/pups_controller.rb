@@ -10,5 +10,11 @@ class Api::PupsController < ApplicationController
         render :show
     end
 
+    def filter
+        query = params[:filter] 
+        @pups = Pup.where({pup_age: filter})
+        render :index
+    end
+
 
 end
