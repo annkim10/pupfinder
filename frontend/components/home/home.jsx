@@ -4,13 +4,12 @@ import img2 from "../../assets/img2.jpg"
 import meet from "../../assets/meet.jpg"
 import { Link } from "react-router-dom"
 import PupPicks from "../pup/pup_picks";
-import Articles from "./articles";
-
 
 class Home extends React.Component {
 
     constructor(props) {
         super(props)
+    
     }
 
     componentDidMount() {
@@ -22,17 +21,37 @@ class Home extends React.Component {
         }
     }
 
+    // componentDidUpdate() {
+    //      if (this.props.currentUser) {
+    //          this.props.fetchFavorites(this.props.currentUser.id)
+    //     }
+    // }
+
     render() {
 
         const {pups, postFavorite, currentUser} = this.props
+
+        const keys = Object.keys(pups)
+        const random = []
+
+        for (let i = 0; i < 5; i++) {
+            let randomNum = Math.floor(Math.random() * 25) + 1
+            if (!random.includes(randomNum)) random.push(randomNum)
+        }
+
+        var pupPicks = []
+
+        random.forEach(r => pupPicks.push(pups[r]))
+
+        console.log("home", pupPicks)
+
 
         return (
         <div className="home-wrapper">
             <div className="main-div">
                 <div className="inner-home-div">
                     <div className="pup-home-div">
-                        <Link to={`/users/preferences`}>Find your perfect pup</Link>
-                       {/* <h1>Find your perfect pup</h1> */}
+                       <h1>Find your perfect pup</h1>
                     </div>
                     <img className="hero-img" src={img} />
                 </div>
@@ -41,11 +60,12 @@ class Home extends React.Component {
                         <Link className="pup-picks-link" to="/pups/index">Find Adoptable Pups</Link>
                     </div>
                     <div className='pup-picks-div'>
-                         {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                         {pupPicks.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
                     </div>
                 </div>    
                 <div className="meet-greet-home-div">
                     <div className="meet-greet-copy-div">
+                        {/* <img className="meet-greet-form-img" src={meet} /> */}
                         <div className="meet-greet-text-div">
                             <h1>Are you a match? </h1>
                             <p>Schedule a Meet &amp; Greet with a pup</p>
@@ -55,8 +75,7 @@ class Home extends React.Component {
                 </div>
                  <div className="articles-home-div">
                     <div className="articles-home-wrapper">
-                        <h1>Caring for Your Pup</h1>
-                        <Articles />
+                        
                     </div>
                 </div>   
             </div>

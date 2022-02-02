@@ -33,10 +33,6 @@ class User < ApplicationRecord
     foreign_key: :user_id, 
     class_name: :Favorite
 
-    has_one :preferences, 
-    foreign_key: :user_id,
-    class_name: :Preference
-
 
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
