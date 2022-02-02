@@ -1,0 +1,245 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.445);
+  z-index: 100;
+}
+
+.modal-child {
+  position: absolute;
+  /* background: whitesmoke; */
+  /* background-image: url('dog-pattern.png'); */
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: 680px 680px; */
+  top: 50%;
+  left: 50%;
+  min-width: auto;
+  max-width: auto;
+  min-height: auto;
+  max-height: auto;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  /* padding: 40px; */
+}
+
+.form-wrapper {
+  background: rgb(255, 255, 255);
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 600px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  /* padding: 10px; */
+}
+
+.form-header {
+  /* background-color: turquoise; */
+  font-family: 'Poppins', sans-serif;
+  color: #3f04bf;
+  font-size: 35px;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.login-form, .signup-form {
+  /* background: darkcyan; */
+  /* width: 400px; */
+  display: block;
+  padding: 10px 50px;
+  color: rgb(65, 65, 65);
+}
+
+.close-x {
+  padding: 20px 20px 0 0;
+}
+
+.close-x > button {
+  /* background: green; */
+  /* background-color: #260273da; */
+  color:#260273;
+  padding: 10px;
+  float: right;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.close-x > button:hover {
+  cursor: pointer;
+  background-color: #260273;
+  color: whitesmoke;
+}
+
+.close-x > button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transform: translateY(4px);
+  background-color: #260273;
+}
+
+.modal-wrapper select, .modal-wrapper input, .meet-greet-form-div select, .meet-greet-form-div input, .meet-greet-form-div  {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 90%;
+  padding: 10px 0px 10px 10px;
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 5px;
+  margin: 8px 0px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: content-box;
+}
+
+.form-button {
+  /* border: 1px solid #3f04bf; */
+  background-color: #260273;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+  width: 95%;
+  margin: 8px 0px;
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+
+.form-button:hover {
+  background-color: #260273;
+  /* border: 1px solid #3f04bf; */
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.form-button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transform: translateY(4px);
+}
+
+.other-form-link {
+  /* background-color: violet; */
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  color: rgb(65, 65, 65);
+}
+
+.other-form {
+  text-decoration: underline;
+  color:#260273;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(65, 65, 65);
+}
+
+.error-list {
+  color: rgb(201, 25, 25);
+  font-size: 14px;
+}
+
+.demo-login-div {
+  /* background-color: blue; */
+  border-top: 0.5px solid rgb(180, 180, 180);
+  padding-top: 10px;
+  width: 95%;
+}
+
+.demo-login-div > button {
+  width: 100%;
+}
+
+
+
+/* MEET CONFIRMATION PAGE */
+
+.edit-modal-wrapper {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-top: 40px solid #3f04bf;
+}
+
+
+.confirm-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.confirm-header {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.confirm-header > span {
+  font-weight: 600;
+  color: #3f04bf;
+  padding-right: 10px;
+} 
+
+.confirm-body {
+  width: 400px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.confirm-body > span {
+  font-weight: 600;
+  color: #260273;
+}
+
+.confirm-button {
+  width: 200px;
+  display: block;
+  border: 1px solid #260273;
+  padding: 10px;
+  margin-top: 40px;
+  color: #260273;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.confirm-button:hover {
+  width: 200px;
+  display: block;
+  background-color: #260273;
+  /* border: 1px solid #260273; */
+  padding: 10px;
+  margin-top: 40px;
+  color: white;
+}
+
+.confirm-icon {
+  font-size: 5rem;
+}
