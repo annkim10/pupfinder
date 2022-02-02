@@ -11,3 +11,11 @@ export const fetchPup = pupId => (
         method: 'GET'
     })
 )
+
+export const filterPup = filter => (
+    $.ajax({
+        url: `/api/pups/filter`,
+        method: 'GET',
+        data: { filter }
+    })
+)

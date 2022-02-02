@@ -93,7 +93,8 @@
   background-color: #260273;
 }
 
-select, input {
+
+.modal-wrapper select, .modal-wrapper input, .meet-greet-form-div select, .meet-greet-form-div input, .meet-greet-form-div  {
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;

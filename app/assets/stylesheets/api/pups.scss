@@ -3,10 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.index-div {
+    display: flex;
+    width: 100%;
+    padding-left: 10%;
+    gap: 5rem;
+
+}
+
+.filter-wrapper {
+    width: 250px;
+    padding-top: 20px;
+
+}
+
+.filter-div > h1 {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
 .card-div {
     // background-color: aqua;
     margin-top: 20px;
-    min-width: 100%;
+    min-width: 50%;
     min-height: 400px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));

@@ -9,10 +9,16 @@ Rails.application.routes.draw do
       resources :favorites, only: [:index]
     end
 
+    resources :preferences, only: [:create, :update, :show, :index]
+
     resources :favorites, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
 
-    resources :pups, only: [:index, :show]
+    resources :pups, only: [:index, :show] do 
+      collection do
+        get :filter, to: "pups#filter", as: "filter"
+      end
+    end
 
     resources :rescueorgs, only: [:index, :show]
   end
