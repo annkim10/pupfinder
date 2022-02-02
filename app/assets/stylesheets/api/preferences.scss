@@ -1,0 +1,245 @@
+// Place all the styles related to the api/preferences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.preference-form-outer-div{
+    background-color: #260273;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1800px;
+    color: white
+}
+
+.preference-form-inner-div {
+    min-width: 1024px;
+    max-width: 1220px;
+    min-height: 100%;
+    border-radius: 20px;
+    padding-left: 150px
+}
+
+.preference-form-header {
+    height: 100px;
+    padding-top: 50px
+}
+
+.create-pref-form-header > h1 {
+    font-size: 50px;
+    font-weight: 200;
+    color: #4BFAE3
+}
+
+.create-pref-form-header > h2 {
+    font-size: 25px;
+    font-weight: 200;
+    padding-top: 20px
+}
+
+.preference-form-questions-div {
+    padding-top: 50px;
+}
+
+//QUESTIONS
+
+.pref-dropdown-box {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.pref-question-div {
+    padding-bottom: 40px
+}
+
+.pref-question {
+    font-size: 18px;
+    font-weight: 200;
+    padding: 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.pref-dropdown-options-container-age, .pref-dropdown-options-container-size {
+    background: white;
+    color: black;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.selected-pref {
+    color: #4BFAE3;
+    position: relative;
+    padding: 12px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    height: 30px;
+}
+
+.pref-dropdown-options-container-active {
+    background: white;
+    color: rgb(34, 34, 34);
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.pref-icon {
+    width: 45px;
+    font-size: 2rem;
+    padding-right: 20px;
+    padding-bottom: 5px
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 30%;
+    left: 90%;
+    width: 45px;
+    font-size: 1.5rem;
+}
+
+.radio-button {
+    display: none;
+}
+
+.pref-dropdown-options {
+  padding: 12px 24px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  color: rgb(34, 34, 34)
+}
+
+.pref-dropdown-options:hover {
+    background-color: rgb(236, 236, 236);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.preference-form-button {
+  border: 1px solid white;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 300px;
+}
+
+
+//MATCHES PAGE
+
+.matches-header {
+    height: 100px;
+    font-size: 50px;
+    font-weight: 200;
+    color: #4BFAE3;
+    padding-top: 50px;
+}
+
+.matches-pref-div {
+    font-size: 20px;
+    font-weight: 200;
+    width: 800px;
+}
+
+.matches-header-2 {
+    padding-bottom: 50px
+}
+
+.matches-pref-list {
+    padding-top: 10px;
+    display: flex;
+    height: 300px
+}
+
+.pref-container {
+    display: flex;
+    min-width: 600px;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.pref-div {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+
+}
+
+.pref-div h1 {
+    font-size: 2rem
+}
+
+.pref-div h2 {
+    font-weight: 600;
+    padding-bottom: 20px;
+    font-size: 16px;
+    padding: 8px 0 20px 0;
+}
+
+.pref-div p {
+    color: #4BFAE3;
+    font-weight: 200;
+    font-size: 22px
+}
+
+.pup-matches-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 1px solid white
+}
+
+.pup-matches-header-div {
+    margin-top: 80px
+}
+
+.pup-matches-header {
+    font-size: 30px;
+    color: #4BFAE3;
+    padding: 25px 0;
+    border-top: 1px solid white;
+}
+
+.pup-matches-div {
+    display: flex;
+    gap: 3rem;
+
+}
+
+.pup-matches-body {
+    height: 300px;
+    padding-top: 40px;
+}
+
+.pup-matches-text {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.pups-index-button {
+  border: 1px solid white;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke;
+  padding: 12px 60px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 300px;
+}
