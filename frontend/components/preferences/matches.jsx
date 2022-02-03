@@ -55,7 +55,7 @@ class Matches extends React.Component {
         } else if ( pref.agePref !== 'No Preference' && (pref.sizePref === 'No Preference' && pref.genderPref === 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupAge === pref.agePref))
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
-        } else if (pref.genderPref !== 'No Preference' && (pref.sizePref === 'No Preference' && pref.agePref === 'No Preference')) {
+        } else if (pref.genderPref === 'No Preference' && (pref.sizePref !== 'No Preference' && pref.agePref !== 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupAge === pref.agePref && pup.pupSize === pref.sizePref))
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
         } else if (responses.every(response => response !== 'No Preference')) {
@@ -69,22 +69,22 @@ class Matches extends React.Component {
         }
     }
 
+    renderResults(pref, pups) {
+        let results = this.renderMatches(pref, pups)
+        console.log("results", results.length)
+        if (results.length === 0) {
+            return <h1 className="matches-error-message">Ruh-roh! No matches found. Please broaden your preferences.</h1>
+        } else {
+            return results
+        }
+    }
+
+
     render() {
         console.log('inside matches', this.props)
     
         const {preferences, pups} = this.props
         if (!preferences || !pups) return null
-
-        // var filteredPups = pups.filter(pup => {
-        //     return (
-        //             (pup.pupAge === preferences.agePref && pup.pupSize === preferences.sizePref) ||
-        //             (pup.pupAge === preferences.agePref && pup.pupGender === preferences.genderPref)
-        //         )
-        // })
-
-        // if (filteredPups.length > 4) filteredPups = filteredPups.slice(0, 5)
-
-        // console.log("filtered", filteredPups)
         
         return (
             <div className="preference-form-outer-div">
@@ -138,8 +138,8 @@ class Matches extends React.Component {
                         <h1 className="pup-matches-header">Top Pup Matches</h1>
                     </div>
                     <div className="pup-matches-div">
-                        {/* {filteredPups.map(pup => this.renderPupImgs(pup))} */}
-                        {this.renderMatches(preferences, pups)}
+                        {/* {this.renderMatches(preferences, pups)} */}
+                        {this.renderResults(preferences, pups)}
                     </div>
                     <Link className="pups-index-button" to="/pups/index" >MORE PUPS</Link>
                 </div>
