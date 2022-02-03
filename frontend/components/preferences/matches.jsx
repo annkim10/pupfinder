@@ -13,8 +13,8 @@ class Matches extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPups()
         window.scroll(0,0)
+        this.props.fetchPups()
     }
 
     renderPupImgs(pup) {

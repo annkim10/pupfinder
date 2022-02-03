@@ -139,6 +139,7 @@
     color: #260273;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .home-wrapper {
@@ -169,9 +170,36 @@
 
 .pup-home-div {
     position: absolute;
-    top: 50%;
-    left: 20%;
-    display: block;
+    top: 37%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pup-home-div-header > h1 {
+    font-size: 50px;
+    color: #260273;
+    padding-bottom: 20px;
+}
+
+.pup-home-div-header > h2 {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.home-quiz-button {
+    background-color: #260273;
+    margin-top: 30px;
+    border-radius: 20px;
+    width: 100px;
+    padding: 14px 30px;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.home-quiz-button:hover {
+    background-color: #3f04bf;
 }
 
 .hero-img {
@@ -180,6 +208,44 @@
     object-fit: cover;
     border-radius: 20px;
    /* max-width: 100%; */
+}
+
+/* POP UP */
+
+.pop-up-div {
+    height: 36px;
+    width: 180px;
+    background-color: #260273;
+    position: fixed;
+    left: 72%;
+    top: 2%;
+    z-index: 100;
+    display: flex;
+    color: white;
+    align-items: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.pop-up-div > h1 {
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.pop-up-div > svg {
+    font-size: 2rem;
+    padding-left: 5px;
+}
+
+.pop-up {
+    width: 0; 
+    height: 0; 
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+  
+    border-left: 20px solid #260273;
+    position: absolute;
+    left: 100%
 }
 
 /* PUP PICKS */

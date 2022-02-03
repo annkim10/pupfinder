@@ -14,7 +14,6 @@ const FavoritePost = ({pup, currentUser, postFavorite, deleteFavorite, favorites
         favPups = favPups.map(pup => pup.pupId) 
         var keys = Object.keys(favorites)
         if (favPups.includes(pup.id)) {
-            // console.log("key hash", keys.forEach(key => console.log(favorites[key])))
             var favoriteId = keys.find(key => favorites[key].pupId === pup.id)
         }
     }

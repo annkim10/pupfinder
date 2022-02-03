@@ -1,9 +1,9 @@
 import React from "react";
 import img from "../../assets/img1.jpg"
 import img2 from "../../assets/img2.jpg"
-import meet from "../../assets/meet.jpg"
 import { Link } from "react-router-dom"
 import PupPicks from "../pup/pup_picks";
+import { BsArrowRightShort } from "react-icons/bs"
 
 import Articles from "./articles";
 
@@ -32,8 +32,11 @@ class Home extends React.Component {
             <div className="main-div">
                 <div className="inner-home-div">
                     <div className="pup-home-div">
-                        <Link to={`/users/preferences`}>Find your perfect pup</Link>
-                       {/* <h1>Find your perfect pup</h1> */}
+                        <div className="pup-home-div-header">
+                            <h1>Find your perfect pup</h1>
+                            <h2>Get personalized matches</h2>
+                        </div>
+                        <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link>
                     </div>
                     <img className="hero-img" src={img} />
                 </div>

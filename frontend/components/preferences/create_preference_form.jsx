@@ -40,6 +40,7 @@ class CreatePreferenceForm extends React.Component {
     }
 
     componentDidMount() {
+        window.scroll(0,0)
         this.setState({user_id: "this.props.currentUser.id"})
     }
 

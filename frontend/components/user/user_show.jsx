@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa"
 class UserShow extends React.Component {
 
     render() {
+        window.scroll(0,0)
         // console.log("inside user", this.props)
         const {currentUser} = this.props
         return (

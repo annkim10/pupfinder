@@ -16,7 +16,7 @@ const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
     fetchRescues: () => dispatch(fetchRescues()),
     postFavorite: favorite => dispatch(postFavorite(favorite)),
-    fetchFavorites: usedId => dispatch(fetchFavorites(usedId))
+    fetchFavorites: userId => dispatch(fetchFavorites(userId))
 })
 
 export default connect(mapState, mapDispatch)(Home)

@@ -12,12 +12,11 @@ class PupIndex extends React.Component {
     }
 
     componentDidMount() {
+        window.scroll(0,0)
         this.props.fetchPups()
-        this.props.fetchFavorites(this.props.currentUser.id)
+        this.props.fetchFavorites(this.props.currentUser.id) 
         // this.props.fetchRescues()
     }
-
- 
 
     render() {
         const { pups, currentUser, postFavorite, deleteFavorite, favorites, filterPups  } = this.props

@@ -20,6 +20,7 @@ class FilterPups extends React.Component {
     }
 
     handleChange(e) {
+        e.stopPropagation()
         this.setState({filter: e.target.innerText, showOptions: false})
     }
 
@@ -30,7 +31,10 @@ class FilterPups extends React.Component {
                     <div className="filter-dropdown-options-wrapper">
                         {this.age.map((pref, idx) => {
                             return (
-                            <div className="filter-dropdown-options" onClick={(e) => this.handleChange(e)}>
+                            <div className="filter-dropdown-options" onClick={(e) => {
+                                e.stopPropagation()
+                                this.handleChange(e)
+                            } }>
                                 <input type="radio" className="radio-button" name="age-filter" key={idx} value={pref} />
                                 <label htmlFor="age-filter">{pref}</label>
                             </div>
@@ -44,14 +48,29 @@ class FilterPups extends React.Component {
         }
     }
 
+    renderArrow() {
+        if (this.state.showOptions) {
+            return <IoIosArrowDown className="filter-arrow-icon-up" onClick={(e) => {
+                e.preventDefault()
+                this.setState({showOptions: false})
+            }}/>
+        } else {
+           return <IoIosArrowDown className="filter-arrow-icon-down"/>
+        }
+    }
+
     render() {
-        console.log(this.state.filter)
+        console.log(this.state)
         return (
             <form onSubmit={this.handleSubmit} >
                  <div className="filter-dropdown-box">
-                    <div className="selected-filter" onClick={() => this.setState({showOptions: true})}>
+                    <div className="selected-filter" onClick={(e) => {
+                        e.stopPropagation()
+                        this.setState({showOptions: true})
+                    }}>
                        { this.state.filter ? this.state.filter : 'Any age' }
-                        <IoIosArrowDown className="filter-arrow-icon"/>
+                      {/* <IoIosArrowDown className="filter-arrow-icon"/> */}
+                      {this.renderArrow()}
                     </div>
                     {this.handleDropdown()}
                     <button className="filters-button">Apply Filters</button>

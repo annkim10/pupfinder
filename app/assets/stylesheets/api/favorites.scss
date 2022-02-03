@@ -22,6 +22,12 @@
     margin-top: 15px
 }
 
+.pup-show-fav-button-post:hover, .pup-show-fav-button-post:hover > .favorite-icon {
+    fill: #260273;
+    color: #260273;
+    opacity: 1
+}
+
 .pup-show-fav-button-post .favorite-icon {
     fill: none;
     opacity: 0.7
@@ -46,7 +52,6 @@
 .pup-show-fav-button-delete .favorite-icon {
     fill: #260273;
     color: #260273;
-
 }
 
 

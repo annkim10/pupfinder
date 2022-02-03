@@ -4,6 +4,7 @@ import PupIndexItem from "../pup/pup_index_item"
 class FavoritesIndex extends React.Component {
 
     componentDidMount() {
+        window.scroll(0,0)
         this.props.fetchFavorites(this.props.currentUser.id)
         this.props.fetchPups()
     }

@@ -1,8 +1,9 @@
 import React from "react"
-import {Link, withRouter} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 import {FaAngleRight, FaAngleLeft, FaMapMarkerAlt, FaRegEnvelopeOpen, FaPhoneAlt, FaLaptop, FaHeart} from "react-icons/fa"
 import {BiCalendarHeart} from "react-icons/bi"
-import pic from "../../assets/profile-pic.jpg"
+import { MdOutlineKeyboardBackspace } from "react-icons/md"
+import { postFavorite } from "../../utils/fav_api_util"
 
 class PupShow extends React.Component {
     constructor(props) {
@@ -10,13 +11,19 @@ class PupShow extends React.Component {
         console.log("construct", this.props)
         this.state = {
             current: 0,
-            length: this.props.pup.photoUrls.length
+            length: this.props.pup.photoUrls.length,
+            favorite: {
+                 pup_id: this.props.pup.id,
+                 user_id: this.props.currentUser.id
+            },
+            favorited: false
         }
         this.nextSlide = this.nextSlide.bind(this)
         this.prevSlide = this.prevSlide.bind(this)
     }
 
     componentDidMount() {
+        window.scroll(0,0)
         this.props.fetchRescue(this.props.pup.orgId)
     }
 
@@ -32,16 +39,37 @@ class PupShow extends React.Component {
         })
     }
 
+    renderFavoriteButton(favPups, pup) {
+
+        if (!favPups.includes(pup.id) && !this.state.favorited) {
+            return (
+                 <button className={"fav-button"} 
+                    onClick={() => (postFavorite(this.state.favorite), this.setState( { favorited: true }) )}>
+                    <span><FaHeart className="heart-icon"/></span>
+                    FAVORITE</button>
+            )
+        } else {
+            return (
+                 <button className={"inactive-fav-button"}>
+                    <span><FaHeart className="heart-icon"/></span>
+                    FAVORITE</button>
+            )
+        }
+    }
+
     render() {
         // console.log("inside pupshow", this.props)
-        const {pup, rescue, user} = this.props
+        const {pup, rescue, user, favorites, postFavorite} = this.props
         if (!pup || !rescue || !user) return null
-        // console.log("inside pupshow", rescue)
-        // console.log("state", this.state)
-        // debugger
+
+        var favPups = Object.values(favorites)
+        favPups = favPups.map(pup => pup.pupId)
+
+      
         return (
             <div className="pup-show-div">
                 <div className="pup-show-main-wrapper">
+                    <Link className="pupshow-to-index-button" to="/pups/index"> <MdOutlineKeyboardBackspace /> Back to Pups</Link>
                     <div className="pup-show-header">
                         <h1>Meet {pup.pupName} </h1>
                     </div>
@@ -86,9 +114,14 @@ class PupShow extends React.Component {
                                 <span> {pup.pupName}</span>?
                             </h1>
                             <div className="meet-buttons">
-                                <Link className="meet-button" to={`/users/${user.id}/${pup.id}/${rescue.id}/meet`}>MEET &amp; GREET</Link>
-                                {/* <button className="meet-button">MEET &amp; GREET</button> */}
-                                <button className="fav-button"><span><FaHeart className="heart-icon"/></span>FAVORITE</button>
+                                <Link className="meet-button" 
+                                    to={`/users/${user.id}/${pup.id}/${rescue.id}/meet`}>
+                                    MEET &amp; GREET</Link>
+                                {this.renderFavoriteButton(favPups, pup)}
+                                {/* <button className={favPups.includes(pup.id) ? "inactive-fav-button" : "fav-button"} 
+                                    onClick={ favPups.includes(pup.id) ? ("") :  (() => postFavorite(this.state.favorite))}>
+                                    <span><FaHeart className="heart-icon"/></span>
+                                    FAVORITE</button> */}
                             </div>
                         </div>
                     </section>
