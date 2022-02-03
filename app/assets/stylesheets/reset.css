@@ -20,8 +20,10 @@ time, mark, audio, video, button {
 	font: inherit;
 	vertical-align: baseline;
     font-family: 'Poppins', sans-serif;
-	/* color: rgb(65, 65, 65); */
     text-decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	color: #4b4b4b;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

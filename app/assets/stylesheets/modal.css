@@ -94,7 +94,7 @@
 }
 
 
-.modal-wrapper select, .modal-wrapper input, .meet-greet-form-div select, .meet-greet-form-div input, .meet-greet-form-div  {
+.modal-wrapper select, .modal-wrapper input {
   -webkit-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -102,7 +102,7 @@
   width: 90%;
   padding: 10px 0px 10px 10px;
   border: 1px solid rgb(160, 160, 160);
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 8px 0px;
   font-family: 'Poppins', sans-serif;
   box-sizing: content-box;

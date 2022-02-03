@@ -111,15 +111,15 @@ class Meet extends React.Component {
                                 {this.renderErrors()}
                                 <div>
                                     <label>Pup Name</label>
-                                    <input className="pre-populated-values" type="text" value={pup.pupName} readOnly/>
+                                    <input id="pre-populated-values" type="text" value={pup.pupName} readOnly/>
                                 </div>
                                <div>
                                 <label>Rescue Organization</label>
-                                <input className="pre-populated-values" type="text" value={rescue.orgName} readOnly/>
+                                <input id="pre-populated-values" type="text" value={rescue.orgName} readOnly/>
                                </div>
                                 <div>
                                     <label> Select Date </label>
-                                    <input type="date" onChange={this.handleChange('date')} min={this.min} max={this.max} />  
+                                    <input id="date-input" type="date" onChange={this.handleChange('date')} min={this.min} max={this.max} />  
                                 </div>
                                 <div className="time-div"> 
                                     <div className="start-time">

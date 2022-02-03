@@ -122,23 +122,23 @@ class EditMeetForm extends React.Component {
                             {this.renderErrors()}
                             <div className="header-div">
                                 <div className="pup-thumbnail-meet-div">
-                                    <img className="pup-thumbnail-meet" src={this.pup.photoUrls[0]} />
+                                    <img className="edit-pup-thumbnail-meet" src={this.pup.photoUrls[0]} />
                                 </div>
-                                <div className="meet-header"> 
+                                <div className="edit-meet-header"> 
                                     <h1> Edit Your Meet &amp; Greet <br/> Request with <span className="edit-span"> {this.pup.pupName}</span>
                                     </h1>
                                 </div>
                             </div>
                                 <div className="form-div">
                                     {/* onSubmit={this.handleSubmit} */}
-                                    <form className="meet-form" >
+                                    <form className="edit-meet-form" >
                                         <div>
                                             <label>Pup Name</label>
-                                            <input className="pre-populated-values" type="text" value={this.pup.pupName} readOnly/>
+                                            <input id="pre-populated-values" type="text" value={this.pup.pupName} readOnly/>
                                         </div>
                                     <div>
                                         <label>Rescue Organization</label>
-                                        <input className="pre-populated-values" type="text" value={this.rescue.orgName} readOnly/>
+                                        <input id="pre-populated-values" type="text" value={this.rescue.orgName} readOnly/>
                                     </div>
                                         <div>
                                             <label> Select Date </label>

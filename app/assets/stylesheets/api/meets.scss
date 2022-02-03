@@ -2,28 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.meet-greet-form-div {
+@import "colors";
+
+.meet-greet-form-div select, .meet-greet-form-div input, .meet-greet-form-div {
     width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #260273;
-    // border-radius: 20px;
+    background-color: $darkViolet;
     color: white;
     padding: 10px 0px 10px 10px;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    -moz-appearance: none;
     border: 1px solid rgb(160, 160, 160);
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 8px 0px;
     font-family: 'Poppins', sans-serif;
     box-sizing: content-box;
 }
 
 .meet-error-list {
-   color: #4BFAE3;
+   color: $cyanAccent;
    font-size: 12px;
    line-height: 1.5;
    padding-bottom:20px
@@ -52,15 +50,15 @@
     background-color: white;
     height: 100%;
     box-shadow: rgba(0, 0, 0, 0.089) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    // background-color: blueviolet;
 }
 
-.meet-header {
+.meet-header, .meet-header > h1 {
     display: block;
     line-height: 1.2;
     text-align: center;
     font-size: 30px;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    color: white
 }
 
 .calendar-form {
@@ -122,9 +120,14 @@
 
 }
 
-.pre-populated-values {
+#pre-populated-values {
     font-weight: 600;
-    color: #260273;
+    color: $strongViolet;
+}
+
+#date-input {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -180,7 +183,7 @@
 
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: $strongViolet;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -205,8 +208,16 @@
   background: white;
 }
 
+.meet-form label {
+    color: white;
+}
+
+.meet-form input, .meet-form select {
+    background-color: white;
+    color: $darkGray
+}
+
 .meet-form-submit-button {
-//   background-color: #3f04bf;
   border: 1px solid white;
   font-family: 'Poppins', sans-serif;
   color: whitesmoke;
@@ -217,6 +228,14 @@
 }
 
 // EDIT FORM 
+
+.edit-pup-thumbnail-meet {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid $strongViolet;
+    object-fit: cover; 
+}   
 
 .edit-meet-form-div, .edit-meet-form-div input, .edit-meet-form-div select {
     width: 90%;
@@ -229,21 +248,31 @@
     -webkit-appearance: none;
     -ms-appearance: none;
     -moz-appearance: none;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 8px 0px;
     font-family: 'Poppins', sans-serif;
     box-sizing: content-box;
 }
 
+.edit-meet-header {
+    color: $darkGray;
+    font-size: 30px;
+    line-height: 1.2;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
  .edit-meet-form-div input, .edit-meet-form-div select {
     border: 1px solid #a0a0a0;
+    color: $darkGray;
  }
 
 .edit-form-submit-button {
-//   background-color: #3f04bf;
   border: 1px solid #260273;
   font-family: 'Poppins', sans-serif;
-  color: #260273;
+  color: $darkViolet;
   padding: 12px 20px;
   border-radius: 20px;
   cursor: pointer;
@@ -251,11 +280,9 @@
 }
 
 .edit-form-submit-button:hover {
-//   background-color: #3f04bf;
-//   border: 1px solid #260273;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: #260273;
+  background-color: $darkViolet;
   padding: 12px 20px;
   border-radius: 20px;
   cursor: pointer;
@@ -268,14 +295,12 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    // background-color: white;
-    // border-radius: 20px;
-    color: rgb(53, 53, 53);
+    color: $darkGray;
     padding-top: 30px;
 }
 
 .edit-span {
-  color: #260273
+  color: $strongViolet
 }
 
 .meet-grid {
@@ -327,7 +352,7 @@
 
 .meet-item-info > h1 {
     font-size: 20px;
-    color: #260273;
+    color: $darkViolet;
 }
 
 .meet-item-info > h3 {
@@ -349,7 +374,7 @@
 
 .edit-button, .trash-button {
     font-size: 1.4rem;
-    color: rgb(37, 37, 37);
+    color: $darkGray;
     cursor: pointer;
     height: 40px;
     width: 40px;
@@ -360,9 +385,9 @@
 
 .edit-button:hover, .trash-button:hover {
     font-size: 1.5rem;
-    background-color: #ececec;
+    background-color: $lightGray;
     border-radius: 50%;
-    color: #260273;
+    color: $darkViolet;
 }
 
 .meet-time-note {

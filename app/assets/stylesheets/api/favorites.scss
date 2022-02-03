@@ -1,6 +1,7 @@
 // Place all the styles related to the api/favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
 
 .pup-show-fav-button-div {
     z-index: 30;
@@ -23,8 +24,8 @@
 }
 
 .pup-show-fav-button-post:hover, .pup-show-fav-button-post:hover > .favorite-icon {
-    fill: #260273;
-    color: #260273;
+    fill: $darkViolet;
+    color: $darkViolet;
     opacity: 1
 }
 
@@ -50,11 +51,9 @@
 }
 
 .pup-show-fav-button-delete .favorite-icon {
-    fill: #260273;
-    color: #260273;
+    fill: $darkViolet;
+    color: $darkViolet;
 }
-
-
 
 
 .fav-index-container {
@@ -82,7 +81,7 @@
 }
 
 .num-fav-pups {
-    color: #260273;
+    color: $darkViolet;
 }
 
 .num-fav-pups::before {
