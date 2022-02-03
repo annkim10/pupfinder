@@ -41,10 +41,11 @@ class EditMeetForm extends React.Component {
     }
 
     endTime(startTime) {
+        debugger
             var idx = this.startTimes.indexOf(startTime)
             if (idx !== this.startTimes.length-1) {
-                var endTime = this.startTimes[(idx+1) % this.startTimes.length]
-                return endTime
+                let newEndTime = this.startTimes[(idx+1) % this.startTimes.length]
+                return newEndTime
             } else {
                 return '9:00PM'
             }
@@ -102,7 +103,7 @@ class EditMeetForm extends React.Component {
     }
 
     render() {
- 
+        console.log("state rendered?", this.state.end_time)
         const { meet } = this.props
         
         if (!meet) {
@@ -159,7 +160,7 @@ class EditMeetForm extends React.Component {
                                             </div>
                                             <div className="end-time">
                                                 <label> End Time </label>
-                                                <input id="end-time-select" type="text" defaultValue={this.state.end_time} />
+                                                <input id="end-time-select" type="text" value={this.state.end_time} />
                                             </div>
                                         </div>
                                         <div>
