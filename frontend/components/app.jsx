@@ -23,15 +23,15 @@ const App = () => (
             <NavBarContainer />
         </header>
         <Switch>
-            <Route path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
-            <Route path="/users/:userId/meets/:meetId" component={EditMeetsFormContainer} />
-            <Route path="/users/preferences/matches" component={MatchesContainer} />
-            <Route path="/users/preferences" component={CreatePreferenceFormContainer} />
-            <Route path="/users/:userId/meets" component={MeetsIndexContainer} />
-            <Route path="/users/:userId/favorites" component={FavoritesIndexContainer}/>
-            <Route path="/users/:userId" component={UserShowContainer} />
-            <Route path="/pups/:rescueId/:pupId" component={PupShowContainer} />
-            <Route path="/pups/index" component={PupIndexContainer} />
+            <AuthRoute path="/users/:userId/:pupId/:rescueId/meet" component={MeetFormContainer} />
+            <AuthRoute path="/users/:userId/meets/:meetId" component={EditMeetsFormContainer} />
+            <AuthRoute path="/users/preferences/matches" component={MatchesContainer} />
+            <AuthRoute path="/users/preferences" component={CreatePreferenceFormContainer} />
+            <AuthRoute path="/users/:userId/meets" component={MeetsIndexContainer} />
+            <AuthRoute path="/users/:userId/favorites" component={FavoritesIndexContainer}/>
+            <AuthRoute path="/users/:userId" component={UserShowContainer} />
+            <AuthRoute path="/pups/:rescueId/:pupId" component={PupShowContainer} />
+            <AuthRoute path="/pups/index" component={PupIndexContainer} />
             <Route exact path="/" component={HomeContainer}/>
         </Switch>
         <Footer />
