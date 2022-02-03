@@ -60,7 +60,7 @@ class FilterPups extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+  
         return (
             <form onSubmit={this.handleSubmit} >
                  <div className="filter-dropdown-box">

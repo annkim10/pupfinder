@@ -10,7 +10,6 @@ class FavoritesIndex extends React.Component {
     }
 
     render() {
-        console.log("inside fav index", this.props)
 
         const {favorites, pups, currentUser, postFavorite, deleteFavorite} = this.props
 

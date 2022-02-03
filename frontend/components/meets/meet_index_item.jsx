@@ -9,13 +9,13 @@ class MeetIndexItem extends React.Component {
         this.clicked = false
     }
 
-    expandForm() {
-        this.clicked=true
-        // console.log(this.clicked)
-        // return (e) => {
-           return 
-        // }
-    }
+    // expandForm() {
+    //     this.clicked=true
+    //     // console.log(this.clicked)
+    //     // return (e) => {
+    //        return 
+    //     // }
+    // }
 
     render() {
         const {meet, pup, rescue, deleteMeet, openModal} = this.props

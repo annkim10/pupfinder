@@ -17,6 +17,10 @@ class Matches extends React.Component {
         this.props.fetchPups()
     }
 
+    componentWillUnmount() {
+        this.props.clearPreferences()
+    }
+
     renderPupImgs(pup) {
         const rescueId = pup.orgId
 
@@ -71,7 +75,7 @@ class Matches extends React.Component {
 
     renderResults(pref, pups) {
         let results = this.renderMatches(pref, pups)
-        console.log("results", results.length)
+    
         if (results.length === 0) {
             return <h1 className="matches-error-message">Ruh-roh! No matches found. Please broaden your preferences.</h1>
         } else {
@@ -81,7 +85,6 @@ class Matches extends React.Component {
 
 
     render() {
-        console.log('inside matches', this.props)
     
         const {preferences, pups} = this.props
         if (!preferences || !pups) return null
@@ -138,10 +141,9 @@ class Matches extends React.Component {
                         <h1 className="pup-matches-header">Top Pup Matches</h1>
                     </div>
                     <div className="pup-matches-div">
-                        {/* {this.renderMatches(preferences, pups)} */}
                         {this.renderResults(preferences, pups)}
                     </div>
-                    <Link className="pups-index-button" to="/pups/index" >MORE PUPS</Link>
+                    <Link className="pups-index-button" to="/pups/index">MORE PUPS</Link>
                 </div>
             </div>
         )

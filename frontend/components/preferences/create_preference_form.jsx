@@ -44,6 +44,18 @@ class CreatePreferenceForm extends React.Component {
         this.setState({user_id: "this.props.currentUser.id"})
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
+    renderErrors() {
+        return (
+           <ul className="pref-error-list">
+                {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+           </ul>
+        )
+    }
+
     renderButton() {
        if (this.props.formType === 'create') {
            return <button className="preference-form-button">Find my matches</button>
@@ -81,7 +93,8 @@ class CreatePreferenceForm extends React.Component {
             house_trained_pref: this.state.house_trained_pref,
             good_with_dogs_pref: this.state.good_with_dogs_pref
         }
-        this.props.processForm(form).then(this.setState({redirect: true}))
+        console.log("submitted form", this.props.errors)
+        this.props.processForm(form).then(() => this.props.history.push("/users/preferences/matches"))
     }
 
     handleChange(e, field, options) {
@@ -221,14 +234,8 @@ class CreatePreferenceForm extends React.Component {
         }
     }
 
+
     render() {
-
-        console.log("inside pref form", this.state)
-
-        if (this.state.redirect) {
-            return <Redirect push to="/users/preferences/matches" />
-            // return <MatchesContainer preferences={this.props.preferences}/>
-        }
 
         return (
             <div className="preference-form-outer-div">
@@ -238,6 +245,7 @@ class CreatePreferenceForm extends React.Component {
                     </div>
                     <div className="preference-form-questions-div">
                         <form className="preference-form-questions" onSubmit={this.handleSubmit}>
+                            {this.renderErrors()}
                             <div className="pref-question-div">
                                 <div className="pref-question">
                                    What is your age preference?

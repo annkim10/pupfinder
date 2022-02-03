@@ -9,7 +9,7 @@ class EditConfirm extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log("inside edit confirm", this.props)
+
     }
 
     render() {

@@ -26,7 +26,7 @@ class Meet extends React.Component {
         this.props.fetchPups()
         this.props.fetchRescues()
         this.setDateRange()
-        // console.log("mount", this.props)
+
     }
 
     componentWillUnmount() {
@@ -92,7 +92,7 @@ class Meet extends React.Component {
 
     render() {
         const { pup, rescue } = this.props
-        console.log("inside meet", this.state)
+
         if (!pup) return null 
         if (!rescue) return null
         return (
@@ -107,8 +107,8 @@ class Meet extends React.Component {
                         </div>
                     </div>
                         <div className="form-div">
-                            {this.renderErrors()}
                             <form className="meet-form" onSubmit={this.handleSubmit}>
+                                {this.renderErrors()}
                                 <div>
                                     <label>Pup Name</label>
                                     <input className="pre-populated-values" type="text" value={pup.pupName} readOnly/>

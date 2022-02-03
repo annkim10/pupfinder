@@ -74,7 +74,7 @@ class EditMeetForm extends React.Component {
     // processForm:(userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.props.userId, this.props.meet.id, this.state).then(() => this.props.history.push(`/users/${this.props.meet.userId}/meets`)) 
+        this.props.processForm(this.props.userId, this.props.meet.id, this.state).then(() => this.props.history.push(`/users/${this.props.meet.userId}/meets`) ) 
     }
 
     // `/users/${this.props.meet.userId}/meets`
@@ -88,7 +88,7 @@ class EditMeetForm extends React.Component {
     }
 
     handleCancel(e) {
-        console.log("inside cancel", e)
+
         e.preventDefault()
         this.props.deleteMeet(this.props.userId, this.props.meet.id).then(this.props.openModal('edit-cancel'))
     }
@@ -102,7 +102,7 @@ class EditMeetForm extends React.Component {
     }
 
     render() {
-        console.log("inside edit", this.state)
+ 
         const { meet } = this.props
         
         if (!meet) {

@@ -9,7 +9,7 @@ class MeetFormConfirm extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log("inside confirm", this.props) 
+     
     }
 
     componentDidMount() {
@@ -26,8 +26,7 @@ class MeetFormConfirm extends React.Component {
 
         const pup = this.props.pups[pupId]
         const rescue = this.props.rescues[rescueId]
-        
-        // console.log("inside confirm", pup, rescue) 
+
         
         return (
             <div className="edit-modal-wrapper">

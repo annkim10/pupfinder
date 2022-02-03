@@ -248,3 +248,17 @@
   cursor: pointer;
   width: 300px;
 }
+
+.pups-index-button:hover {
+    background-color: #4BFAE3;
+    font-weight: 600;
+    color:rgb(65, 65, 65);
+    border: none;
+}
+
+.pref-error-list {
+    color: #f04b4b;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}

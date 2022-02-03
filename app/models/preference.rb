@@ -16,14 +16,8 @@
 #
 class Preference < ApplicationRecord
 
-    validates :user_id, presence: true
-    validates :age_pref, presence: true, inclusion: { in: %w(No\ Preference Puppy Adult Senior)}
-    validates :size_pref, presence: true, inclusion: { in: %w(No\ Preference Small Medium Large)}
-    validates :gender_pref, presence: true, inclusion: { in: %w(No\ Preference Female Male) }
-    validates :activity_pref, presence: true, inclusion: { in: %w(No\ Preference Active Very\ Active Laid-back) }
-    validates :special_needs_pref, presence: true, inclusion: { in: %w(No\ Preference Open Not\ Open) }
-    validates :house_trained_pref, presence: true, inclusion: { in: %w(No\ Preference Yes No) }
-    validates :good_with_dogs_pref, presence: true, inclusion: { in: %w(No\ Preference Yes No) }
+
+    validates :user_id, :age_pref, :size_pref, :gender_pref, :activity_pref, :special_needs_pref, :house_trained_pref, :good_with_dogs_pref, presence: true 
 
     belongs_to :user, 
     primary_key: :id, 
