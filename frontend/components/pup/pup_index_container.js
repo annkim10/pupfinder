@@ -1,6 +1,6 @@
 import PupIndex from "./pup_index";
 import { connect } from "react-redux";
-import {fetchPups} from "../../actions/pup_actions"
+import { fetchPups, filterPups } from "../../actions/pup_actions"
 import { postFavorite, deleteFavorite, fetchFavorites } from "../../actions/fav_actions";
 
 const mapState = state => ({
@@ -13,7 +13,8 @@ const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
     postFavorite: favorite => dispatch(postFavorite(favorite)),
     deleteFavorite: favoriteId => dispatch(deleteFavorite(favoriteId)),
-    fetchFavorites: userId => dispatch(fetchFavorites(userId))
+    fetchFavorites: userId => dispatch(fetchFavorites(userId)),
+    filterPups: filter => dispatch(filterPups(filter))
     // fetchRescues: () => dispatch(fetchRescues())
 })
 

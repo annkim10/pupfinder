@@ -84,8 +84,6 @@ class CreatePreferenceForm extends React.Component {
     }
 
     handleChange(e, field, options) {
-        console.log(field)
-
         this.setState({[field]: e.target.innerText, [options]: false})
     }
 

@@ -24,5 +24,5 @@ export const fetchPups = () => dispatch => PupApiUtil.fetchPups()
 export const fetchPup = pupId => dispatch => PupApiUtil.fetchPup(pupId)
 .then(pup => dispatch(receivePup(pup)))
 
-export const filterPup = filter => dispatch => PupApiUtil.filterPup(filter)
-.then(pups => dispatchEvent(receivePups(pups)))
+export const filterPups = filter => dispatch => PupApiUtil.filterPups(filter)
+.then(pups => dispatch(receivePups(pups)))

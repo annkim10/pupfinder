@@ -12,7 +12,7 @@ export const fetchPup = pupId => (
     })
 )
 
-export const filterPup = filter => (
+export const filterPups = filter => (
     $.ajax({
         url: `/api/pups/filter`,
         method: 'GET',

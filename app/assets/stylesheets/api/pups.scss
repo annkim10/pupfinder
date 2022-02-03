@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//PUPS FILTER
 
 .index-div {
     display: flex;
@@ -21,6 +22,82 @@
     font-size: 20px;
     padding-left: 10px;
 }
+
+.filter-dropdown-box {
+    padding-bottom: 5px;
+    margin-top: 20px;
+    width: 270px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.selected-filter {
+    position: relative;
+    padding: 12px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    height: 30px;
+}
+
+.filter-arrow-icon {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 45px;
+    font-size: 1.5rem;
+}
+
+.filter-dropdown-options-container-active {
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.filter-dropdown-options-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-dropdown-options {
+    width: 215px;
+    display: block;
+    padding: 20px 0 20px 20px;
+}
+
+.filter-dropdown-options:not(:last-child) {
+    border-bottom: 1px solid rgb(221, 221, 221)
+}
+
+
+.filter-dropdown-options:hover {
+    color: #260273;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.filters-button {
+    width: 155px;
+    border: 2px solid #260273;
+    border-radius: 20px;
+    color: #260273;
+    padding: 10px;
+    margin-top: 50px
+}
+
+.filters-button:hover {
+    background-color: #260273;
+    color:white;
+}
+
+
+
+// PUPS INDEX
 
 
 .card-div {
