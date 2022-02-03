@@ -4,6 +4,7 @@ import { fetchMeets, deleteMeet } from "../../actions/meet_actions"
 import { fetchRescues } from "../../actions/rescue_actions";
 import { fetchPups } from "../../actions/pup_actions";
 import { openModal } from "../../actions/modal_actions";
+import { withRouter } from "react-router-dom";
 
 
 const mapState = state => ({
@@ -21,5 +22,5 @@ const mapDispatch = dispatch => ({
     openModal: modal => dispatch(openModal(modal))
 })
 
-export default connect(mapState, mapDispatch)(MeetsIndex)
+export default withRouter(connect(mapState, mapDispatch)(MeetsIndex))
 

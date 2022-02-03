@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .meet-greet-form-div {
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -11,7 +11,15 @@
     background-color: #260273;
     // border-radius: 20px;
     color: white;
-    padding-top: 30px;
+    padding: 10px 0px 10px 10px;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 5px;
+    margin: 8px 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: content-box;
 }
 
 .meet-error-list {
@@ -208,14 +216,28 @@
   width: 94%;
 }
 
-// edit form 
+// EDIT FORM 
 
-// .edit-meet-form-div {
-//   height: 300px;
-//   width: 800px; 
-//   background-color: white;
-//   border-radius: 20px;
-// }
+.edit-meet-form-div, .edit-meet-form-div input, .edit-meet-form-div select {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    justify-content: center;
+    // border-radius: 20px;
+    padding: 10px 0px 10px 10px;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    border-radius: 5px;
+    margin: 8px 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: content-box;
+}
+
+ .edit-meet-form-div input, .edit-meet-form-div select {
+    border: 1px solid #a0a0a0;
+ }
 
 .edit-form-submit-button {
 //   background-color: #3f04bf;
@@ -239,8 +261,6 @@
   cursor: pointer;
   width: 94%;
 }
-
-
 
 .edit-meet-form-div {
     width: 100%;
@@ -291,6 +311,12 @@
     font-size: 30px;
     margin-top: 25px;
     padding-bottom: 30px;
+    border-bottom: 1px solid lightgray
+}
+
+.no-meets-message {
+    margin-top: 50px;
+    font-weight: 300;
 }
 
 .meet-item-info {
@@ -346,4 +372,14 @@
     padding-top: 10px;
     font-style: italic;
     font-weight: 200;
+}
+
+.meets-length-span::before{
+    content: "(";
+    font-weight: 300;
+}
+
+.meets-length-span::after{
+    content: ")";
+    font-weight: 300;
 }

@@ -36,9 +36,6 @@ class MeetIndexItem extends React.Component {
                 </div>
                 <div className="meet-item-buttons">
                     <Link className="edit-button" to={`/users/${meet.userId}/meets/${meet.id}`}><FiEdit /></Link>
-                    {/* <button className="edit-button" onClick={() => openModal('edit')}>
-                        <FiEdit />
-                    </button> */}
                      <button className="trash-button" onClick={() => deleteMeet(meet.userId, meet.id)}>
                         <FiTrash2 />
                     </button>

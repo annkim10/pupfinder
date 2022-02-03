@@ -25,10 +25,11 @@ class Api::MeetsController < ApplicationController
 
     def update 
          @meet = Meet.find_by(id: params[:id])
-         if @meet.update(meet_params)
+         if @meet
+            @meet.update(meet_params)
             render :show 
          else
-             render json: @meet.errors.full_messages, status: 422
+             render json: ['Please fill out all fields']
         end
     end
 

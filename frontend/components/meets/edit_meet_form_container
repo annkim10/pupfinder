@@ -19,11 +19,11 @@ export const mapState = (state, ownProps) => ({
 export const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
     fetchRescues: () => dispatch(fetchRescues()),
-    processForm:(userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
+    processForm: (userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
     openModal: () => dispatch(openModal('edit')),
     fetchMeets: userId => dispatch(fetchMeets(userId)),
     clearErrors: () => dispatch(clearErrors()),
-    deleteMeet: (userId, meetId) => dispatch(deleteMeet(userId, meetId))
+    // deleteMeet: (userId, meetId) => dispatch(deleteMeet(userId, meetId))
 })
 
 export default withRouter(connect(mapState, mapDispatch)(EditMeetForm))

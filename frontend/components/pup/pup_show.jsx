@@ -118,10 +118,6 @@ class PupShow extends React.Component {
                                     to={`/users/${user.id}/${pup.id}/${rescue.id}/meet`}>
                                     MEET &amp; GREET</Link>
                                 {this.renderFavoriteButton(favPups, pup)}
-                                {/* <button className={favPups.includes(pup.id) ? "inactive-fav-button" : "fav-button"} 
-                                    onClick={ favPups.includes(pup.id) ? ("") :  (() => postFavorite(this.state.favorite))}>
-                                    <span><FaHeart className="heart-icon"/></span>
-                                    FAVORITE</button> */}
                             </div>
                         </div>
                     </section>

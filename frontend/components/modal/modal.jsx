@@ -22,22 +22,22 @@ function Modal({modal, closeModal}) {
     case 'meet':
       component = <ConfirmFormContainer />;
       break;
-    case 'edit':
-      component = <EditConfirm />;
+    case 'edit-cancel':
+      component = <EditConfirm type="cancel" />;
       break;
     default:
       return null;
   }
 
-  if (modal === 'edit') {
-    return (
-    <div className="modal-background" >
-      <div className="modal-child">
-        { component }
+    if (modal === 'edit') {
+      return (
+      <div className="modal-background" >
+        <div className="modal-child">
+          { component }
+        </div>
       </div>
-    </div>
-    );
-  } else {
+      );
+    } else {
     return (
         <div className="modal-background" onClick={closeModal}>
           <div className="modal-child" onClick={e => e.stopPropagation()}>

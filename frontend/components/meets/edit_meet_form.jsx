@@ -1,6 +1,6 @@
 import React from "react"
 import {FaLaptop, FaPeopleArrows } from "react-icons/fa"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 
 
 class EditMeetForm extends React.Component {
@@ -11,9 +11,17 @@ class EditMeetForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.dateMin = null
         this.dateMax = null
-        this.state = this.props.meet
+        this.state = {
+            pup_id: this.props.meet.pupId,
+            user_id: this.props.meet.userId ,
+            org_id: this.props.meet.orgId,
+            date: this.props.meet.date,
+            meeting_type: this.props.meet.meetingType,
+            start_time: this.props.meet.startTime,
+            end_time: this.props.meet.endTime
+        }
         this.handleCancel = this.handleCancel.bind(this)
-        console.log("edit construct", this.props)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     startTimes() {
@@ -66,8 +74,10 @@ class EditMeetForm extends React.Component {
     // processForm:(userId, meetId, meet) => dispatch(updateMeet(userId, meetId, meet)),
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.props.userId, this.props.meet.id, this.state).then(this.props.openModal)
+        this.props.processForm(this.props.userId, this.props.meet.id, this.state).then(() => this.props.history.push(`/users/${this.props.meet.userId}/meets`)) 
     }
+
+    // `/users/${this.props.meet.userId}/meets`
 
     handleChange(field) {
         if (field === 'start_time') {
@@ -78,8 +88,9 @@ class EditMeetForm extends React.Component {
     }
 
     handleCancel(e) {
+        console.log("inside cancel", e)
         e.preventDefault()
-        this.props.deleteMeet(this.props.userId, this.props.meet.id).then(this.props.openModal('edit'))
+        this.props.deleteMeet(this.props.userId, this.props.meet.id).then(this.props.openModal('edit-cancel'))
     }
 
     renderErrors() {
@@ -91,8 +102,8 @@ class EditMeetForm extends React.Component {
     }
 
     render() {
-        // console.log("inside edit", this.props)
-        const {meet} = this.props
+        console.log("inside edit", this.state)
+        const { meet } = this.props
         
         if (!meet) {
             this.pup = null 
@@ -118,7 +129,8 @@ class EditMeetForm extends React.Component {
                                 </div>
                             </div>
                                 <div className="form-div">
-                                    <form className="meet-form" onSubmit={this.handleSubmit}>
+                                    {/* onSubmit={this.handleSubmit} */}
+                                    <form className="meet-form" >
                                         <div>
                                             <label>Pup Name</label>
                                             <input className="pre-populated-values" type="text" value={this.pup.pupName} readOnly/>
@@ -135,12 +147,19 @@ class EditMeetForm extends React.Component {
                                             <div className="start-time">
                                                 <label> Start Time </label>
                                                 <select className="time-select" onChange={this.handleChange('start_time')}>
-                                                {this.startTimes.map((time, idx) => <option key={idx}>{time} </option>)}
+                                                {this.startTimes.map((time, idx) => {
+                                                    if (time === this.state.start_time) {
+                                                        return  <option selected key={idx}>{time} </option>
+                                                    } else {
+                                                        return <option key={idx}>{time} </option>
+                                                    }
+                                                    }
+                                                )}
                                                 </select>
                                             </div>
                                             <div className="end-time">
                                                 <label> End Time </label>
-                                                <input id="end-time-select" type="text" defaultValue={meet.end_time} />
+                                                <input id="end-time-select" type="text" defaultValue={this.state.end_time} />
                                             </div>
                                         </div>
                                         <div>
@@ -160,11 +179,9 @@ class EditMeetForm extends React.Component {
                                             </div>
                                         </div>   
                                         <div className="edit-form-buttons">
-                                            <button className="edit-form-submit-button">Save Changes</button>   
-                                            <br/>    
-                                            <button className="edit-form-submit-button" onClick={this.handleCancel}>Cancel Request</button>   
-                                        </div> 
-                                                            
+                                            <button className="edit-form-submit-button" onClick={this.handleSubmit}>Save Changes</button>   
+                                            {/* <button className="edit-form-cancel-button" onClick={this.handleCancel}>Cancel Request</button>   */}
+                                        </div>  
                                     </form>
                                 </div>
                         </div>   
