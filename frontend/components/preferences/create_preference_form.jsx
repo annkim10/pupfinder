@@ -82,6 +82,7 @@ class CreatePreferenceForm extends React.Component {
     }
 
     handleSubmit(e) {
+        window.scroll(0,0)
         e.preventDefault()
         const form = {
             user_id: this.props.currentUser.id,

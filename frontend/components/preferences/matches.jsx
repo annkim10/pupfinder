@@ -41,41 +41,45 @@ class Matches extends React.Component {
     renderMatches(pref, pups) {
         var responses = [pref.agePref, pref.sizePref, pref.genderPref]
         var filteredPups
-
         if (responses.every(response => response === 'No Preference')) {
+
             return pups.slice(10,14).map(pup => this.renderPupImgs(pup))
         } else if ( pref.agePref === 'No Preference' && (pref.sizePref !== 'No Preference' && pref.genderPref !== 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupSize === pref.sizePref && pup.pupGender === pref.genderPref))
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup))
         } else if ((pref.agePref === 'No Preference' && pref.sizePref === 'No Preference') && pref.genderPref !== 'No Preference') {
             filteredPups = pups.filter(pup => pup.pupGender === pref.genderPref)
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup))
         } else if ((pref.agePref === 'No Preference' && pref.genderPref === 'No Preference') && pref.sizePref !== 'No Preference') {
             filteredPups = pups.filter(pup => pup.pupSize === pref.sizePref)
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup))
         } else if ( pref.sizePref === 'No Preference' && (pref.agePref !== 'No Preference' && pref.genderPref !== 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupAge === pref.agePref && pup.pupGender === pref.genderPref))
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
         } else if ( pref.agePref !== 'No Preference' && (pref.sizePref === 'No Preference' && pref.genderPref === 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupAge === pref.agePref))
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
         } else if (pref.genderPref === 'No Preference' && (pref.sizePref !== 'No Preference' && pref.agePref !== 'No Preference')) {
             filteredPups = pups.filter(pup => (pup.pupAge === pref.agePref && pup.pupSize === pref.sizePref))
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
         } else if (responses.every(response => response !== 'No Preference')) {
-            filteredPups = pups.filter(pup => {
-                  (pup.pupAge === pref.agePref && pup.pupSize === pref.sizePref) ||
-                  (pup.pupAge === pref.agePref && pup.pupGender === pref.genderPref)
-            })
+            filteredPups = pups.filter(pup => pup.pupAge === pref.agePref && pup.pupGender === pref.genderPref)
+
             return filteredPups.slice(0, 5).map(pup => this.renderPupImgs(pup)) 
         } else {
+
             return pups.slice(10,14).map(pup => this.renderPupImgs(pup))
         }
     }
 
     renderResults(pref, pups) {
         let results = this.renderMatches(pref, pups)
-    
         if (results.length === 0) {
             return <h1 className="matches-error-message">Ruh-roh! No matches found. Please broaden your preferences.</h1>
         } else {
@@ -88,7 +92,7 @@ class Matches extends React.Component {
     
         const {preferences, pups} = this.props
         if (!preferences || !pups) return null
-        
+        console.log("preferences, pups", preferences, pups)
         return (
             <div className="preference-form-outer-div">
                 <div className="preference-form-inner-div">
