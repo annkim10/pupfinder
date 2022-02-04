@@ -71,18 +71,14 @@ class Home extends React.Component {
                             <h2>Get personalized matches</h2>
                         </div>
                         {this.renderMatchesLink()}
-                        {/* <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link> */}
                     </div>
-                    <img className="hero-img" src={img} />
+                    <img className="hero-img" src={ window.img1URL} />
                 </div>
                 <div className="pup-picks-home-div">
                     <div className="pup-picks-header">
                         {this.renderIndexLink()}
                     </div>
                     {this.renderPupPicks()}
-                    {/* <div className='pup-picks-div' onClick={() => this.props.openModal('login')}>
-                         {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
-                    </div> */}
                 </div>    
                 <div className="meet-greet-home-div">
                     <div className="meet-greet-copy-div">
@@ -91,7 +87,7 @@ class Home extends React.Component {
                             <p>Schedule a Meet &amp; Greet with a pup</p>
                         </div>
                     </div>       
-                    <img className="meet-greet-img" src={img2} />
+                    <img className="meet-greet-img" src={ window.img2URL} />
                 </div>
                  <div className="articles-home-div">
                     <div className="articles-home-wrapper">

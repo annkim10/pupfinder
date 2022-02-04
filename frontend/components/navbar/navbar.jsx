@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import logo from "../../../app/assets/images/pupfinder_logo.png"
 import { FaHeart } from "react-icons/fa"
-import UserShowContainer from "../user/user_show_container"
 
 
 
@@ -42,7 +40,7 @@ class NavBar extends React.Component {
             <div className="top-navbar">
                     <div className="top-navbar-logo-div" >
                         <Link to="/">
-                            <img className="top-navbar-logo" src={logo} />
+                            <img className="top-navbar-logo" src={window.logoURL} />
                         </Link>
                     </div>
                    {this.checkLogin()}
