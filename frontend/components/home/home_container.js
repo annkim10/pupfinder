@@ -3,6 +3,7 @@ import Home from "./home";
 import { fetchPups } from "../../actions/pup_actions";
 import { fetchRescues } from "../../actions/rescue_actions"
 import { postFavorite, fetchFavorites } from "../../actions/fav_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const mapState = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -16,7 +17,8 @@ const mapDispatch = dispatch => ({
     fetchPups: () => dispatch(fetchPups()),
     fetchRescues: () => dispatch(fetchRescues()),
     postFavorite: favorite => dispatch(postFavorite(favorite)),
-    fetchFavorites: userId => dispatch(fetchFavorites(userId))
+    fetchFavorites: userId => dispatch(fetchFavorites(userId)),
+    openModal: modal => dispatch(openModal(modal))
 })
 
 export default connect(mapState, mapDispatch)(Home)

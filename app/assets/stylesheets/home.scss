@@ -197,8 +197,19 @@
     text-align: center;
 }
 
-.home-quiz-button:hover {
+.home-quiz-button-notlogin {
+    background-color: $darkViolet;
+    margin-top: 30px;
+    border-radius: 20px;
+    width: 165px;
+    padding: 14px 30px;
+    color: white;
+    text-align: center;
+}
+
+.home-quiz-button:hover, .home-quiz-button-notlogin:hover {
     background-color: $strongViolet;
+    cursor: pointer;
 }
 
 .hero-img {

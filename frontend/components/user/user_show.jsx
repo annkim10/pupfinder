@@ -5,6 +5,19 @@ import { FaUserCircle } from "react-icons/fa"
 
 class UserShow extends React.Component {
 
+    renderProfileImg(currentUser) {
+        if (currentUser.photoUrls.length === 0) {
+            return <p className="no-profile-img"><FaUserCircle/></p>
+        } else {
+            return (
+                <div>
+                      <img className="profile-pic" src={currentUser.photoUrls[0]} />
+                      <p className="user-icon"><FaUserCircle/></p>
+                </div>
+            )
+        }
+    }
+
     render() {
         window.scroll(0,0)
         // console.log("inside user", this.props)
@@ -15,8 +28,7 @@ class UserShow extends React.Component {
                     <div className="user-profile">
                         <div className="user-about">
                             <h1>My Pupfinder</h1>
-                            <img className="profile-pic" src={currentUser.photoUrls[0]} />
-                            <p className="user-icon"><FaUserCircle/></p>
+                            {this.renderProfileImg(currentUser)}
                             <p className="user-name">{currentUser.firstName} {currentUser.lastName}</p>
                             <p>{currentUser.email}</p>
                             <div className="user-links">

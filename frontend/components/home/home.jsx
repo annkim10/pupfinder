@@ -23,6 +23,22 @@ class Home extends React.Component {
         }
     }
 
+    renderIndexLink() {
+        if (!this.props.currentUser) {
+            return <button className="pup-picks-link" onClick={() => this.props.openModal('login')}>Find Adoptable Pups</button>
+        } else {
+            return <Link className="pup-picks-link" to="/pups/index">Find Adoptable Pups</Link>
+        }
+    }
+
+    renderMatchesLink() {
+          if (!this.props.currentUser) {
+            return <button className="home-quiz-button-notlogin" onClick={() => this.props.openModal('login')}>Get Started</button>
+        } else {
+            return <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link>
+        }
+    }
+
     render() {
 
         const {pups, postFavorite, currentUser} = this.props
@@ -36,15 +52,16 @@ class Home extends React.Component {
                             <h1>Find your perfect pup</h1>
                             <h2>Get personalized matches</h2>
                         </div>
-                        <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link>
+                        {this.renderMatchesLink()}
+                        {/* <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link> */}
                     </div>
                     <img className="hero-img" src={img} />
                 </div>
                 <div className="pup-picks-home-div">
                     <div className="pup-picks-header">
-                        <Link className="pup-picks-link" to="/pups/index">Find Adoptable Pups</Link>
+                        {this.renderIndexLink()}
                     </div>
-                    <div className='pup-picks-div'>
+                    <div className='pup-picks-div' onClick={() => this.props.openModal('login')}>
                          {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
                     </div>
                 </div>    
