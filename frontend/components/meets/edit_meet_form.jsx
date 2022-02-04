@@ -162,7 +162,7 @@ class EditMeetForm extends React.Component {
                                             </div>
                                         </div>
                                         <div>
-                                            <p className="meet-time-note">All Meet &amp; Greets are scheduled for 1 hour. You may request to change the time of your appointment with the rescue organization. </p>
+                                            <p className="edit-meet-time-note">All Meet &amp; Greets are scheduled for 1 hour. You may request to change the time of your appointment with the rescue organization. </p>
                                         </div>
                                         <div className="meeting-type-wrapper">
                                             <label> Select Meeting Type </label>
