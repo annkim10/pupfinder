@@ -1,24 +1,44 @@
-# README
+# Pupfinder 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Live 
 
-Things you may want to cover:
+[Pupfinder site](https://pupfinderapp.herokuapp.com/#/)
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## About Pupfinder
 
-* Database creation
+<img src="https://github.com/annkim10/pupfinder/blob/main/app/assets/images/pupfinder_logo.png" width=120 height=33 />
 
-* Database initialization
+Pupfinder is a reimagination of Petfinder.com as a dynamic new way to connect prospective dog owners with adoptable pups. With Pupfinder, users can...
 
-* How to run the test suite
+* Find dogs available for adoption, categorized by age, size, gender and more
+* Filter pup results based on age 
+* Get personalized pet matches based on user preferences/needs
+* Favorite a pup 
+* Request/Edit/Cancel a Meet & Greet with a pup
 
-* Services (job queues, cache servers, search engines, etc.)
+## Technologies Used
 
-* Deployment instructions
+### Frontend
 
-* ...
+* React
+* Redux
+* Javascript
+* HTML5
+* CSS
+
+### Backend
+
+* Ruby on Rails 
+* PostgreSQL
+
+### Additional Technologies
+
+* Webpack
+* Git
+* Amazon Web Services
+
+
+
+
