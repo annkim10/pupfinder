@@ -52,12 +52,10 @@ class FilterPups extends React.Component {
 
     renderArrow() {
         if (this.state.showOptions) {
-            console.log(this.state)
             return <IoIosArrowDown className="filter-arrow-icon-up" />
                 // e.preventDefault()
                 // return this.setState({showOptions: false}, console.log(this.state))
         } else {
-           console.log(this.state)
            return <IoIosArrowDown className="filter-arrow-icon-down"/>
         }
     }

@@ -102,7 +102,6 @@ class EditMeetForm extends React.Component {
     }
 
     render() {
-        console.log("state rendered?", this.state.end_time)
         const { meet } = this.props
         
         if (!meet) {

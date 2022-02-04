@@ -6,22 +6,26 @@ const Footer = () => {
     
     return( 
         <footer className="footer-wrapper">
-            {/* <div className="purple-bkgd">
-                <p>&nbsp;</p>
-            </div> */}
             <div className="footer-div">
                 <div className="about-me">
-                    <p>This site was designed by Ann Kim.</p>
+                    <h1>About Pupfinder</h1>
+                    <p>This site is a reimagination of Petfinder.com as a way to create a more dynamic platform for dog adoption.</p>
                 </div>
                 <div className="my-links">
-                    <ul>
-                        <li><span><FaLinkedin /></span>LinkedIn</li>
-                        <li><span><FaGithub /></span>Github</li>
-                        <li><span><FaYoutube /></span>Youtube</li>
+                    <ul className="links-div">
+                        <li className="links">
+                            <a classname="links" href="https://www.linkedin.com/in/ann-kim/"> 
+                                <span><FaLinkedin /></span>LinkedIn</a>
+                           </li>
+                        <li className="links">
+                            <a className="links" href="https://github.com/annkim10">
+                                <span><FaGithub /></span>Github</a>
+                        </li>
+                        <li className="links">
+                            <a className="links" href="https://youtu.be/edX8kZcE4p8?t=1197">
+                                <span><FaYoutube /></span>Youtube</a>
+                        </li>
                     </ul>
-                </div>
-                <div className="petfinder">
-                    <p>The real petfinder</p>
                 </div>
             </div>
         </footer>
