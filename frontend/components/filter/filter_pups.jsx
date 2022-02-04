@@ -12,6 +12,8 @@ class FilterPups extends React.Component {
         }
         this.age = ['Puppy', 'Adult', 'Senior']
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.renderArrow = this.renderArrow.bind(this)
     }
 
     handleSubmit(e) {
@@ -20,7 +22,7 @@ class FilterPups extends React.Component {
     }
 
     handleChange(e) {
-        e.stopPropagation()
+        // e.stopPropagation()
         this.setState({filter: e.target.innerText, showOptions: false})
     }
 
@@ -31,11 +33,11 @@ class FilterPups extends React.Component {
                     <div className="filter-dropdown-options-wrapper">
                         {this.age.map((pref, idx) => {
                             return (
-                            <div className="filter-dropdown-options" onClick={(e) => {
-                                e.stopPropagation()
+                            <div key={idx} className="filter-dropdown-options" onClick={(e) => {
+                                // e.stopPropagation()
                                 this.handleChange(e)
-                            } }>
-                                <input type="radio" className="radio-button" name="age-filter" key={idx} value={pref} />
+                            }}>
+                                <input type="radio" className="radio-button" name="age-filter" value={pref} />
                                 <label htmlFor="age-filter">{pref}</label>
                             </div>
                             )
@@ -50,11 +52,12 @@ class FilterPups extends React.Component {
 
     renderArrow() {
         if (this.state.showOptions) {
-            return <IoIosArrowDown className="filter-arrow-icon-up" onClick={(e) => {
-                e.preventDefault()
-                this.setState({showOptions: false})
-            }}/>
+            console.log(this.state)
+            return <IoIosArrowDown className="filter-arrow-icon-up" />
+                // e.preventDefault()
+                // return this.setState({showOptions: false}, console.log(this.state))
         } else {
+           console.log(this.state)
            return <IoIosArrowDown className="filter-arrow-icon-down"/>
         }
     }
@@ -65,7 +68,7 @@ class FilterPups extends React.Component {
             <form onSubmit={this.handleSubmit} >
                  <div className="filter-dropdown-box">
                     <div className="selected-filter" onClick={(e) => {
-                        e.stopPropagation()
+                        // e.stopPropagation()
                         this.setState({showOptions: true})
                     }}>
                        { this.state.filter ? this.state.filter : 'Any age' }

@@ -93,3 +93,23 @@
     content: ")";
     font-weight: 300;
 }
+
+.no-fav-message {
+    font-size: 20px;
+    padding-left: 5px;
+    margin-top: 40px;
+}
+
+.no-fav-message-link {
+    color: $strongViolet;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.no-fav-message-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3em;
+    text-decoration-skip-ink: none;
+    color: $darkViolet;
+}

@@ -41,7 +41,6 @@ class EditMeetForm extends React.Component {
     }
 
     endTime(startTime) {
-        debugger
             var idx = this.startTimes.indexOf(startTime)
             if (idx !== this.startTimes.length-1) {
                 let newEndTime = this.startTimes[(idx+1) % this.startTimes.length]

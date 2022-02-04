@@ -28,7 +28,6 @@
 }
 
 .header-div {
-    // border-bottom: 1px white solid;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -332,16 +331,19 @@
     object-fit: cover;
 }
 
+.meet-container {
+    width: 100%;
+}
+
 .meet-index-header {
-    font-size: 30px;
-    margin-top: 25px;
+    font-size: 35px;
+    margin-top: 60px;
     padding-bottom: 30px;
-    border-bottom: 1px solid lightgray
 }
 
 .no-meets-message {
     margin-top: 50px;
-    font-weight: 300;
+    font-size: 20px;
 }
 
 .meet-item-info {
@@ -399,12 +401,18 @@
     font-weight: 200;
 }
 
+.meets-length-span {
+    color: $darkViolet
+}
+
 .meets-length-span::before{
     content: "(";
     font-weight: 300;
+    color: $darkViolet
 }
 
 .meets-length-span::after{
     content: ")";
     font-weight: 300;
+    color: $darkViolet
 }

@@ -32,10 +32,28 @@ class Home extends React.Component {
     }
 
     renderMatchesLink() {
-          if (!this.props.currentUser) {
+        if (!this.props.currentUser) {
             return <button className="home-quiz-button-notlogin" onClick={() => this.props.openModal('login')}>Get Started</button>
         } else {
             return <Link className="home-quiz-button" to={`/users/preferences`}>Get Started</Link>
+        }
+    }
+
+    renderPupPicks() {
+        const {pups, postFavorite, currentUser} = this.props
+
+        if (!currentUser) {
+            return (
+                <div className='pup-picks-div' onClick={() => this.props.openModal('login')}>
+                    {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                </div>
+            )
+        } else {
+            return (
+                <div className='pup-picks-div'>
+                    {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
+                </div>
+            )
         }
     }
 
@@ -61,9 +79,10 @@ class Home extends React.Component {
                     <div className="pup-picks-header">
                         {this.renderIndexLink()}
                     </div>
-                    <div className='pup-picks-div' onClick={() => this.props.openModal('login')}>
+                    {this.renderPupPicks()}
+                    {/* <div className='pup-picks-div' onClick={() => this.props.openModal('login')}>
                          {this.props.pupsArr.map((pup, idx) => <PupPicks key={idx} postFavorite={postFavorite} pup={pup} currentUser={currentUser}/>)}
-                    </div>
+                    </div> */}
                 </div>    
                 <div className="meet-greet-home-div">
                     <div className="meet-greet-copy-div">
