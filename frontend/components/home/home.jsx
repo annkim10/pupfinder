@@ -1,6 +1,6 @@
 import React from "react";
-import img from "../../assets/img1.jpg"
-import img2 from "../../assets/img2.jpg"
+import img from "../../../app/assets/images/img1.jpg"
+import img2 from "../../../app/assets/images/img2.jpg"
 import { Link } from "react-router-dom"
 import PupPicks from "../pup/pup_picks";
 import { BsArrowRightShort } from "react-icons/bs"

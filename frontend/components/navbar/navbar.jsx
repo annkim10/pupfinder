@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import logo from "../../assets/pupfinder_logo.png"
+import logo from "../../../app/assets/images/pupfinder_logo.png"
 import { FaHeart } from "react-icons/fa"
 import UserShowContainer from "../user/user_show_container"
 

@@ -1,9 +1,8 @@
 import React from "react"
-import img1 from "../../assets/article1.jpg"
-import img2 from "../../assets/article2.jpg"
-import img3 from "../../assets/article3.jpg"
-import img4 from "../../assets/article4.jpg"
-
+import img1 from "../../../app/assets/images/article1.jpg"
+import img2 from "../../../app/assets/images/article2.jpg"
+import img3 from "../../../app/assets/images/article3.jpg"
+import img4 from "../../../app/assets/images/article4.jpg"
 
 
 const Articles = () => {
