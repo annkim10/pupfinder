@@ -10,13 +10,14 @@
 
 <img src="https://github.com/annkim10/pupfinder/blob/main/app/assets/images/pupfinder_logo.png" width=120 height=33 />
 
-Pupfinder is a reimagination of Petfinder.com as a dynamic new way to connect prospective dog owners with adoptable pups. With Pupfinder, users can...
+Pupfinder is a reimagination of [Petfinder](https://www.petfinder.com/) as a dynamic new way to connect prospective dog owners with adoptable pups. With Pupfinder, users can...
 
 * Find dogs available for adoption, categorized by age, size, gender and more
-* Filter pup results based on age 
 * Get personalized pet matches based on user preferences/needs
-* Favorite a pup 
-* Request/Edit/Cancel a Meet & Greet with a pup
+* Request a Meet & Greet with a pup
+
+
+![alt text](https://github.com/annkim10/pupfinder/blob/main/app/assets/images/pupfinder-splash.gif "Pupfinder Splash Gif")
 
 ## Technologies Used
 
@@ -40,5 +41,13 @@ Pupfinder is a reimagination of Petfinder.com as a dynamic new way to connect pr
 * Amazon Web Services
 
 
+## Features 
 
+* Users view all pup adoption listings or filter results by age
+* Users can favorite or unfavorite a pup
+* Users can request a Meet & Greet with a pup, edit or cancel the request under their account page
+* Users can answer questions on their pup preferences/needs such as age, size or gender to find the perfect pup
+
+
+![alt text](https://github.com/annkim10/pupfinder/blob/main/app/assets/images/pup-index.gif "Pupfinder Index Gif")
 
